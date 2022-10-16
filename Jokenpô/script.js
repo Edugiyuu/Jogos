@@ -31,15 +31,22 @@ if(bot == 1){
     if (bot == Inicio){
         console.log(`Deu empate! ➖`)
     } else if(bot == 2 && Inicio == 1){
-        console.log('Parabens você ganhou do bot! ✅ 🏆 Digite "4" para ver suas jogadas')
+        console.log(`Parabens você ganhou do bot! ✅ 🏆. Voce ganhou ${++jogadas} vezes`)
     } else if (bot == 1 && Inicio == 2){
         console.log('Você Perdeu do bot Tente novamente ❌')
     } else if (bot == 1 && Inicio == 3){
-        console.log('Parabens você ganhou do bot! ✅ 🏆 Digite "4" para ver suas jogadas')
+        console.log(`Parabens você ganhou do bot! ✅ 🏆. Voce ganhou ${++jogadas} vezes`)
     } else if (bot == 3 && Inicio == 1){
         console.log('Você Perdeu do bot Tente novamente ❌')
     } else if (bot == 2 && Inicio == 3){
         console.log('Você Perdeu do bot Tente novamente ❌')
     } else if (bot == 3 && Inicio == 2){
-        console.log(`Parabens você ganhou!✅ 🏆. Voce ganhou ${++jogadas} vezes. Aperte 4 para ir denovo`)
+        console.log(`Parabens você ganhou!✅ 🏆. Voce ganhou ${++jogadas} vezes`)
     } 
+    let voltar = prompt(`Quer jogar novamente? responda "Sim" ou "Não"`);
+
+    if(voltar == 'Sim' || `sim`){
+        
+    }else if(voltar == `Não` || `não`) {
+        
+    }
