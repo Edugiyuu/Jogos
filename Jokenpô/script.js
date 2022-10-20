@@ -1,7 +1,7 @@
 const prompt = require("prompt-sync")({ sigint: true });
 
 var continuar = "1";
-function EscolhaDoplayer(numero) {
+function printEscolhaDoPlayer(numero) {
     jokenpo = {
     1:'Você usou Papel 📜',
     2:'Você usou Pedra 🌑',
@@ -10,7 +10,7 @@ function EscolhaDoplayer(numero) {
 console.log(jokenpo[numero]);
 }
 
-function EscolhaDoRobo(numero) {
+function printEscolhaDoRobo(numero) {
     jokenpo = {
     1:'O Robo usou Papel 📜',
     2:'O Robo usou Pedra 🌑',
@@ -22,24 +22,16 @@ console.log(jokenpo[numero]);
 console.log('Bem vindo')
 
 while (continuar === "1") {
-  let Escolha = prompt(
+  let escolhaDoJogador = prompt(
     `Digite 1 para Papel 📜 , 2 Para Pedra 🌑  ou 3 para Tesoura ✂️  Para jogar: ` 
   );
 
-  (EscolhaDoplayer(Escolha));
+  (printEscolhaDoPlayer(escolhaDoJogador));
   
-  const Robo = Math.floor(Math.random() * 3) + 1;
-  (EscolhaDoRobo(Robo))
+  const escolhaDoRobo = Math.floor(Math.random() * 3) + 1;
+  (printEscolhaDoRobo(escolhaDoRobo))
 
-  if (Robo == Escolha) {
-    console.log(`Deu empate! ➖`);
-  } else if (Robo == 2 && Escolha == 1) {
-    console.log(
-      `Parabens você ganhou do Robo! ✅ 🏆. Voce ganhou  vezes`
-    );
-  } else if (Robo == 1 && Escolha == 2) {
-    console.log("Você Perdeu do Robo Tente novamente ❌");
-  }
+  
   continuar = prompt(
     `Quer jogar novamente? responda "1" para Sim ou "2" Para Não `
   );
