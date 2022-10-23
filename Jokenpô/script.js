@@ -1,4 +1,10 @@
 const prompt = require("prompt-sync")({ sigint: true });
+let modoDeJogo = prompt("Digite seu modo de jogo, para ir Player Vs bot digite '1' e para Player vs Player digite '2'");
+
+if (modoDeJogo == 1){
+
+
+
 
 var continuar = "1";
 
@@ -73,10 +79,40 @@ function printaEscolha(numero, jogador) {
   }
   console.log(jokenpo[numero]);
 }
+}else {
+  let nomeDoPlayer1 = prompt("Digite o nome do player1: ");
+
+  let nomeDoPlayer2 = prompt("Digite o nome do player2: ");
+
+  let escolhaDoPlayer1 = prompt (`Digite 1 para Papel 📜 , 2 Para Pedra 🌑  ou 3 para Tesoura ✂️  Para jogar ${nomeDoPlayer1}:`)
+
+  let escolhaDoPlayer2 = prompt (`Digite 1 para Papel 📜 , 2 Para Pedra 🌑  ou 3 para Tesoura ✂️  Para jogar ${nomeDoPlayer2}:`)
+  if (escolhaDoPlayer1 == nomeDoPlayer2) {
+    console.log('Deu empate! ➖');
+  }
+  else if (escolhaDoPlayer1 == 1 && escolhaDoPlayer2 == 2) {
+    console.log(`Parabens ${nomeDoPlayer1} ganhou do ${nomeDoPlayer2} ✅ 🏆`);
+    console.log(`${nomeDoPlayer2} Perdeu do ${nomeDoPlayer1} Tente novamente ❌`);
+  }
+  else if (escolhaDoPlayer1 == 2 && escolhaDoPlayer2 == 3) {
+    printaVitoria();
+  }
+  else if (escolhaDoPlayer1 == 3 && escolhaDoPlayer2 == 1) {
+    printaVitoria();
+  }
+  else {
+    printaDerrota();
+  }
+
+}
+
+
+
+
 // Evitar a repetição da menssagem de vitoria
 // Evitar a repetição da menssagem de derrota
 // Criar Tratativa para a palavra vezes para quando for no plural e vez quando for singular
-// Alterar o nome da variavel Inicio, jogadas, bot. Feito
+// Alterar o nome da variavel Inicio, jogadas, bot. 
 // Criar Validação do que o usuario digitar
 // Utilizar objeto para substituição para os if
 // Criar função que mostra quem ganhou 'Dentro da função tera uma regra de como funciona o jogo essa função retornara quem ganhou'
