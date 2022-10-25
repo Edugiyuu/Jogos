@@ -80,6 +80,8 @@ function printaEscolha(numero, jogador) {
   console.log(jokenpo[numero]);
 }
 }else {
+
+
   let nomeDoPlayer1 = prompt("Digite o nome do player1: ");
 
   let nomeDoPlayer2 = prompt("Digite o nome do player2: ");
@@ -87,23 +89,48 @@ function printaEscolha(numero, jogador) {
   let escolhaDoPlayer1 = prompt (`Digite 1 para Papel 📜 , 2 Para Pedra 🌑  ou 3 para Tesoura ✂️  Para jogar ${nomeDoPlayer1}:`)
 
   let escolhaDoPlayer2 = prompt (`Digite 1 para Papel 📜 , 2 Para Pedra 🌑  ou 3 para Tesoura ✂️  Para jogar ${nomeDoPlayer2}:`)
+
+  function vitoriaDoPlayer1() {
   if (escolhaDoPlayer1 == nomeDoPlayer2) {
     console.log('Deu empate! ➖');
   }
   else if (escolhaDoPlayer1 == 1 && escolhaDoPlayer2 == 2) {
-    console.log(`Parabens ${nomeDoPlayer1} ganhou do ${nomeDoPlayer2} ✅ 🏆`);
-    console.log(`${nomeDoPlayer2} Perdeu do ${nomeDoPlayer1} Tente novamente ❌`);
+    console.log(`Parabens ${nomeDoPlayer1} ganhou ✅ 🏆`);
+    console.log(`${nomeDoPlayer2} Perdeu Tente novamente ❌`);
   }
   else if (escolhaDoPlayer1 == 2 && escolhaDoPlayer2 == 3) {
-    printaVitoria();
+    console.log(`Parabens ${nomeDoPlayer1} ganhou ✅ 🏆`);
+    console.log(`${nomeDoPlayer2} Perdeu Tente novamente ❌`);
   }
   else if (escolhaDoPlayer1 == 3 && escolhaDoPlayer2 == 1) {
-    printaVitoria();
+    console.log(`Parabens ${nomeDoPlayer1} ganhou ✅ 🏆`);
+    console.log(`${nomeDoPlayer2} Perdeu Tente novamente ❌`);
   }
-  else {
-    printaDerrota();
+}
+
+  function vitoriaDoPlayer2() {
+    
+  }if (escolhaDoPlayer2 == nomeDoPlayer1) {
+    console.log('Deu empate! ➖');
+  }
+  else if (escolhaDoPlayer2 == 1 && escolhaDoPlayer1 == 2) {
+    console.log(`Parabens ${nomeDoPlayer2} ganhou ✅ 🏆`);
+    console.log(`${nomeDoPlayer1} Perdeu Tente novamente ❌`);
+  }
+  else if (escolhaDoPlayer2 == 2 && escolhaDoPlayer1 == 3) {
+    console.log(`Parabens ${nomeDoPlayer2} ganhou ✅ 🏆`);
+    console.log(`${nomeDoPlayer1} Perdeu Tente novamente ❌`);
+  }
+  else if (escolhaDoPlayer2 == 3 && escolhaDoPlayer1 == 1) {
+    console.log(`Parabens ${nomeDoPlayer2} ganhou ✅ 🏆`);
+    console.log(`${nomeDoPlayer1} Perdeu Tente novamente ❌`);
   }
 
+  if (vitoriaDoPlayer1()){
+
+  }else{
+    vitoriaDoPlayer2()
+  }
 }
 
 
