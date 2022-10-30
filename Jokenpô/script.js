@@ -1,55 +1,65 @@
 const prompt = require("prompt-sync")({ sigint: true });
-let modoDeJogo = prompt("Digite seu modo de jogo, para ir Player Vs bot digite '1' e para Player vs Player digite '2'");
-
-if (modoDeJogo == 1){
-
-
-
-
-var continuar = "1";
 
 let qtdeVitorias = 0;
-console.log('Bem vindo')
-let nomeDoJogador = prompt("Digite seu nome: ");
-
-while (continuar === "1") {
-  let escolhaDoJogador = prompt(
-    `Digite 1 para Papel 📜 , 2 Para Pedra 🌑  ou 3 para Tesoura ✂️  Para jogar: `
+function IniciarJogo() {
+  let modoDeJogo = prompt(
+    "Digite seu modo de jogo, para ir Player Vs bot digite '1' e para Player vs Player digite '2'"
   );
+  if (modoDeJogo == 1){
+  var continuar = "1";
 
-  printaEscolha(escolhaDoJogador, nomeDoJogador);
+  console.log("Bem vindo");
+  let nomeDoJogador = prompt("Digite seu nome: ");
 
-  const escolhaDoRobo = Math.floor(Math.random() * 3) + 1;
+  while (continuar === "1") {
+    let escolhaDoJogador = prompt(
+      `Digite 1 para Papel 📜 , 2 Para Pedra 🌑  ou 3 para Tesoura ✂️  Para jogar: `
+    );
 
-  printaEscolha(escolhaDoRobo, "Robô")
+    printaEscolha(escolhaDoJogador, nomeDoJogador);
 
-  defineVencedor(escolhaDoJogador, escolhaDoRobo);
+    const escolhaDoRobo = Math.floor(Math.random() * 3) + 1;
 
-  continuar = prompt(
-    `Quer jogar novamente? responda "1" para Sim ou "2" Para Não `
-  );
+    printaEscolha(escolhaDoRobo, "Robô");
+
+    defineVencedor(escolhaDoJogador, escolhaDoRobo);
+
+    continuar = prompt(
+      `Quer jogar novamente? responda "1" para Sim ou "2" Para Não `
+    );
+  }
+}else{
+  var nomeDoJogador1 = prompt('Escreva seu nome aqui Jogador 1: ')
+  var nomeDoJogador2 = prompt('Escreva seu nome aqui Jogador 2: ')
+  
+  PrintaEscolhaDoJogador1(nomeDoJogador1)
+  PrintaEscolhaDoJogador(nomeDoJogador2)
+
+
 }
+}
+function PrintaEscolhaDoJogador1() {
+  return prompt(`Digite 1 para Papel 📜 , 2 Para Pedra 🌑 ou 3 para Tesoura ✂️  Para jogar ${nomeDoJogador1}: `)
+}
+
+
 
 function defineVencedor(escolhaDoJogador, escolhaDoRobo) {
   if (escolhaDoJogador == escolhaDoRobo) {
     printaEmpate();
-  }
-  else if (escolhaDoJogador == 1 && escolhaDoRobo == 2) {
+  } else if (escolhaDoJogador == 1 && escolhaDoRobo == 2) {
     printaVitoria();
-  }
-  else if (escolhaDoJogador == 2 && escolhaDoRobo == 3) {
+  } else if (escolhaDoJogador == 2 && escolhaDoRobo == 3) {
     printaVitoria();
-  }
-  else if (escolhaDoJogador == 3 && escolhaDoRobo == 1) {
+  } else if (escolhaDoJogador == 3 && escolhaDoRobo == 1) {
     printaVitoria();
-  }
-  else {
+  } else {
     printaDerrota();
   }
 }
 
 function printaEmpate() {
-  console.log('Deu empate! ➖');
+  console.log("Deu empate! ➖");
 }
 
 function printaDerrota() {
@@ -57,14 +67,16 @@ function printaDerrota() {
 }
 
 function printaVitoria() {
-  ++qtdeVitorias
+  ++qtdeVitorias;
   console.log(
-    `Parabens você ganhou do Robo! ✅ 🏆. Voce ganhou ${qtdeVitorias} ${transformaEmPlural('vez')}`
+    `Parabens você ganhou do Robo! ✅ 🏆. Voce ganhou ${qtdeVitorias} ${transformaEmPlural}(
+      "vez"
+    )}`
   );
 }
 
-function transformaEmPlural(texto){
-  return verificaSePlural(qtdeVitorias) ? texto.concat('es') : texto
+function transformaEmPlural(texto) {
+  return verificaSePlural(qtdeVitorias) ? texto.concat("es") : texto;
 }
 
 function verificaSePlural(numero) {
@@ -75,71 +87,17 @@ function printaEscolha(numero, jogador) {
   jokenpo = {
     1: `${jogador} usou Papel 📜`,
     2: `${jogador} usou Pedra 🌑`,
-    3: `${jogador} usou Tesoura ✂️`
-  }
+    3: `${jogador} usou Tesoura ✂️`,
+  };
   console.log(jokenpo[numero]);
 }
-}else {
 
-
-  let nomeDoPlayer1 = prompt("Digite o nome do player1: ");
-
-  let nomeDoPlayer2 = prompt("Digite o nome do player2: ");
-
-  let escolhaDoPlayer1 = prompt (`Digite 1 para Papel 📜 , 2 Para Pedra 🌑  ou 3 para Tesoura ✂️  Para jogar ${nomeDoPlayer1}:`)
-
-  let escolhaDoPlayer2 = prompt (`Digite 1 para Papel 📜 , 2 Para Pedra 🌑  ou 3 para Tesoura ✂️  Para jogar ${nomeDoPlayer2}:`)
-
-  function vitoriaDoPlayer1() {
-  if (escolhaDoPlayer1 == nomeDoPlayer2) {
-    console.log('Deu empate! ➖');
-  }
-  else if (escolhaDoPlayer1 == 1 && escolhaDoPlayer2 == 2) {
-    console.log(`Parabens ${nomeDoPlayer1} ganhou ✅ 🏆`);
-    console.log(`${nomeDoPlayer2} Perdeu Tente novamente ❌`);
-  }
-  else if (escolhaDoPlayer1 == 2 && escolhaDoPlayer2 == 3) {
-    console.log(`Parabens ${nomeDoPlayer1} ganhou ✅ 🏆`);
-    console.log(`${nomeDoPlayer2} Perdeu Tente novamente ❌`);
-  }
-  else if (escolhaDoPlayer1 == 3 && escolhaDoPlayer2 == 1) {
-    console.log(`Parabens ${nomeDoPlayer1} ganhou ✅ 🏆`);
-    console.log(`${nomeDoPlayer2} Perdeu Tente novamente ❌`);
-  }
-}
-
-  function vitoriaDoPlayer2() {
-    
-  }if (escolhaDoPlayer2 == nomeDoPlayer1) {
-    console.log('Deu empate! ➖');
-  }
-  else if (escolhaDoPlayer2 == 1 && escolhaDoPlayer1 == 2) {
-    console.log(`Parabens ${nomeDoPlayer2} ganhou ✅ 🏆`);
-    console.log(`${nomeDoPlayer1} Perdeu Tente novamente ❌`);
-  }
-  else if (escolhaDoPlayer2 == 2 && escolhaDoPlayer1 == 3) {
-    console.log(`Parabens ${nomeDoPlayer2} ganhou ✅ 🏆`);
-    console.log(`${nomeDoPlayer1} Perdeu Tente novamente ❌`);
-  }
-  else if (escolhaDoPlayer2 == 3 && escolhaDoPlayer1 == 1) {
-    console.log(`Parabens ${nomeDoPlayer2} ganhou ✅ 🏆`);
-    console.log(`${nomeDoPlayer1} Perdeu Tente novamente ❌`);
-  }
-
-  if (vitoriaDoPlayer1()){
-
-  }else{
-    vitoriaDoPlayer2()
-  }
-}
-
-
-
+IniciarJogo();
 
 // Evitar a repetição da menssagem de vitoria
 // Evitar a repetição da menssagem de derrota
 // Criar Tratativa para a palavra vezes para quando for no plural e vez quando for singular
-// Alterar o nome da variavel Inicio, jogadas, bot. 
+// Alterar o nome da variavel Inicio, jogadas, bot.
 // Criar Validação do que o usuario digitar
 // Utilizar objeto para substituição para os if
 // Criar função que mostra quem ganhou 'Dentro da função tera uma regra de como funciona o jogo essa função retornara quem ganhou'
