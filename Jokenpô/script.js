@@ -33,15 +33,33 @@ function IniciarJogo() {
   var nomeDoJogador2 = prompt('Escreva seu nome aqui Jogador 2: ')
   
   PrintaEscolhaDoJogador1(nomeDoJogador1)
-  PrintaEscolhaDoJogador(nomeDoJogador2)
+  PrintaEscolhaDoJogador2(nomeDoJogador2)
 
+  defineVencedor2(nomeDoJogador1,nomeDoJogador2)
 
-}
+} 
 }
 function PrintaEscolhaDoJogador1() {
-  return prompt(`Digite 1 para Papel 📜 , 2 Para Pedra 🌑 ou 3 para Tesoura ✂️  Para jogar ${nomeDoJogador1}: `)
+  return prompt(`Digite 1 para Papel 📜 , 2 Para Pedra 🌑 ou 3 para Tesoura ✂️  Para jogar : `)
 }
 
+function PrintaEscolhaDoJogador2() {
+  return prompt(`Digite 1 para Papel 📜 , 2 Para Pedra 🌑 ou 3 para Tesoura ✂️  Para jogar : `)
+}
+
+function defineVencedor2(nomeDoJogador1, nomeDoJogador2) {
+  if (nomeDoJogador1 == nomeDoJogador2) {
+    printaEmpate();
+  } else if (nomeDoJogador1 == 1 && nomeDoJogador2 == 2) {
+    printaVitoria();
+  } else if (nomeDoJogador1 == 2 && nomeDoJogador2 == 3) {
+    printaVitoria();
+  } else if (nomeDoJogador1 == 3 && nomeDoJogador2 == 1) {
+    printaVitoria();
+  } else {
+    printaDerrota();
+  }
+}
 
 
 function defineVencedor(escolhaDoJogador, escolhaDoRobo) {
@@ -63,7 +81,7 @@ function printaEmpate() {
 }
 
 function printaDerrota() {
-  console.log("Você Perdeu do Robo Tente novamente ❌");
+  console.log("Você Perdeu Tente novamente ❌");
 }
 
 function printaVitoria() {
