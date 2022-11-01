@@ -29,36 +29,43 @@ function IniciarJogo() {
     );
   }
 }else{
+
+  
   var nomeDoJogador1 = prompt('Escreva seu nome aqui Jogador 1: ')
   var nomeDoJogador2 = prompt('Escreva seu nome aqui Jogador 2: ')
   
-  PrintaEscolhaDoJogador1(nomeDoJogador1)
-  PrintaEscolhaDoJogador2(nomeDoJogador2)
+  let escolhaDoJogador1 = prompt (`Digite 1 para Papel 📜 , 2 Para Pedra 🌑 ou 3 para Tesoura ✂️  Para jogar : `)
+  let escolhaDoJogador2 = prompt(`Digite 1 para Papel 📜 , 2 Para Pedra 🌑 ou 3 para Tesoura ✂️  Para jogar : `)
 
-  defineVencedor2(nomeDoJogador1,nomeDoJogador2)
+  printaEscolhas (escolhaDoJogador1, escolhaDoJogador2)
+
+  defineVencedor2(escolhaDoJogador1,escolhaDoJogador2)
 
 } 
 }
-function PrintaEscolhaDoJogador1() {
-  return prompt(`Digite 1 para Papel 📜 , 2 Para Pedra 🌑 ou 3 para Tesoura ✂️  Para jogar : `)
-}
 
-function PrintaEscolhaDoJogador2() {
-  return prompt(`Digite 1 para Papel 📜 , 2 Para Pedra 🌑 ou 3 para Tesoura ✂️  Para jogar : `)
-}
 
-function defineVencedor2(nomeDoJogador1, nomeDoJogador2) {
-  if (nomeDoJogador1 == nomeDoJogador2) {
+
+function defineVencedor2() {
+  if (escolhaDoJogador1 == escolhaDoJogador2) {
     printaEmpate();
-  } else if (nomeDoJogador1 == 1 && nomeDoJogador2 == 2) {
+  } else if (escolhaDoJogador1 == 1 && escolhaDoJogador2 == 2) {
     printaVitoria();
-  } else if (nomeDoJogador1 == 2 && nomeDoJogador2 == 3) {
+  } else if (escolhaDoJogador1 == 2 && escolhaDoJogador2 == 3) {
     printaVitoria();
-  } else if (nomeDoJogador1 == 3 && nomeDoJogador2 == 1) {
+  } else if (escolhaDoJogador1 == 3 && escolhaDoJogador2 == 1) {
     printaVitoria();
   } else {
     printaDerrota();
   }
+}
+function printaEscolhas(numero, escolhaDoJogador1, escolhaDoJogador2) {
+  jokenpo2 = {
+    1: `${escolhaDoJogador1} usou Papel 📜`,
+    2: `${escolhaDoJogador1} usou Pedra 🌑`,
+    3: `${escolhaDoJogador1} usou Tesoura ✂️`,
+  };
+  console.log(jokenpo2[numero]);
 }
 
 
@@ -87,7 +94,7 @@ function printaDerrota() {
 function printaVitoria() {
   ++qtdeVitorias;
   console.log(
-    `Parabens você ganhou do Robo! ✅ 🏆. Voce ganhou ${qtdeVitorias} ${transformaEmPlural}(
+    `Parabens você ganhou do Robo! ✅ 🏆. Voce ganhou ${qtdeVitorias} ${transformaEmPlural(
       "vez"
     )}`
   );
@@ -101,11 +108,11 @@ function verificaSePlural(numero) {
   return numero > 1;
 }
 
-function printaEscolha(numero, jogador) {
+function printaEscolha(numero, Jogador) {
   jokenpo = {
-    1: `${jogador} usou Papel 📜`,
-    2: `${jogador} usou Pedra 🌑`,
-    3: `${jogador} usou Tesoura ✂️`,
+    1: `${Jogador} usou Papel 📜`,
+    2: `${Jogador}usou Pedra 🌑`,
+    3: `${Jogador}usou Tesoura ✂️`,
   };
   console.log(jokenpo[numero]);
 }
