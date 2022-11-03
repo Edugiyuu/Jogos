@@ -61,9 +61,9 @@ function defineVencedor2() {
 }
 function printaEscolhas(numero, escolhaDoJogador1, escolhaDoJogador2) {
   jokenpo2 = {
-    1: `${escolhaDoJogador1} usou Papel 📜`,
-    2: `${escolhaDoJogador1} usou Pedra 🌑`,
-    3: `${escolhaDoJogador1} usou Tesoura ✂️`,
+    1: ` usou Papel 📜`,
+    2: ` usou Pedra 🌑`,
+    3: ` usou Tesoura ✂️`,
   };
   console.log(jokenpo2[numero]);
 }
