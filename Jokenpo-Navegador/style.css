@@ -1,0 +1,24 @@
+* {
+    margin-bottom: 30px;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+body{
+     width: fit-content;
+     margin: auto;
+     padding-top: 52px;
+    background: rgb(142,209,252);
+    background: linear-gradient(90deg, rgba(142,209,252,1) 0%, rgba(98,138,255,1) 0%, rgba(67,255,181,1) 100%);
+
+}
+
+
+.chosePvp,.chosePvb{
+    display: flex;
+    padding: 25px;
+    text-align: center;
+    
+    background-color: rgb(247, 247, 38);
+    border-radius: 25px;
+}
