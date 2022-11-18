@@ -29,16 +29,6 @@ function ArmazenarNome() {
     var nomeDoJogador1 = document.getElementById("colocarNome").value;
     alert(nomeDoJogador1);
 }
-
-
 function AtualizarPagina() {
     location.reload(true);
-}
-
-function ChoseColors() {
-
-}
-
-function teste(params) {
-    console.log(params)
 }

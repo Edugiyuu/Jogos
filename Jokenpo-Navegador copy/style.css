@@ -25,6 +25,9 @@ body{
 }
 #enviarNomeDoPlayer1:hover,
 #pgInicial:hover,
+#papel:hover,
+#pedra:hover,
+#tesoura:hover,
 .chosePvb:hover,
 .chosePvp:hover{
   transform: scale(1.2);
@@ -65,7 +68,7 @@ body{
   }
 }
 
-#colocarNome,#pgInicial,#enviarNomeDoPlayer1,#jogar{
+#colocarNome,#pgInicial,#enviarNomeDoPlayer1{
   font-family: 'Comicsans', sans-serif;
   background-color: rgb(254, 254, 254);
   border-color: rgb(7, 7, 7);
@@ -73,12 +76,5 @@ body{
   padding: 4px;
   padding-left: 30px;
   padding-right: 30px;
-}
-#papel:hover,
-#pedra:hover,
-#tesoura:hover{
-  transform: scale(1.2);
-  border: 3px solid;
-  border-color: rgb(21, 255, 0);
 }
 
