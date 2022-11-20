@@ -9,23 +9,23 @@
 </g>
 <defs>
 <filter id="filter0_ddd_1_99" x="0" y="0" width="224" height="65" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feFlood flood-opacity="0" resultado="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" resultado="hardAlpha"/>
 <feOffset dy="1"/>
 <feGaussianBlur stdDeviation="2.5"/>
 <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_99"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feBlend mode="normal" in2="BackgroundImageFix" resultado="effect1_dropShadow_1_99"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" resultado="hardAlpha"/>
 <feOffset dy="3"/>
 <feGaussianBlur stdDeviation="2"/>
 <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0"/>
-<feBlend mode="normal" in2="effect1_dropShadow_1_99" result="effect2_dropShadow_1_99"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feBlend mode="normal" in2="effect1_dropShadow_1_99" resultado="effect2_dropShadow_1_99"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" resultado="hardAlpha"/>
 <feOffset dy="2"/>
 <feGaussianBlur stdDeviation="2"/>
 <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.14 0"/>
-<feBlend mode="normal" in2="effect2_dropShadow_1_99" result="effect3_dropShadow_1_99"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect3_dropShadow_1_99" result="shape"/>
+<feBlend mode="normal" in2="effect2_dropShadow_1_99" resultado="effect3_dropShadow_1_99"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect3_dropShadow_1_99" resultado="shape"/>
 </filter>
 <linearGradient id="paint0_linear_1_99" x1="112" y1="7" x2="112" y2="55" gradientUnits="userSpaceOnUse">
 <stop/>
