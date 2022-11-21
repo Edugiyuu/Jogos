@@ -52,7 +52,7 @@ function changeColor() {
 }
 
 const escolhaDoBotMostrar = document.getElementById('escolhaDoBot')
-const EscolhaDoPlayer = document.getElementById('user-choice')
+const EscolhaDoPlayer = document.getElementById('escolhaDoPlayer')
 const resultadoFinal = document.getElementById('resultado')
 const escolhasPossiveis = document.querySelectorAll('.Tesoura, .Pedra, .Papel')
 
@@ -60,7 +60,7 @@ escolhasPossiveis.forEach(possibleChoice => possibleChoice.addEventListener('cli
   escolhaDoJogador = e.target.id
   EscolhaDoPlayer.innerHTML = escolhaDoJogador
   GerarEscolhaDoRobo()
-  getResult()
+  pegarResultado()
 }))
 
 function GerarEscolhaDoRobo() {
@@ -78,7 +78,7 @@ function GerarEscolhaDoRobo() {
   escolhaDoBotMostrar.innerHTML = escolhaDoBot
 }
 
-function getResult() {
+function pegarResultado() {
   if (escolhaDoBot === escolhaDoJogador) {
     resultado = 'Empate'
   }
