@@ -5,7 +5,7 @@ const op = document.getElementById("opções");
 
 const buttonVoltar = document.getElementById("pgInicial");
 const Logo = document.getElementById("logo");
-const Jogar = document.getElementById("jogar");
+const Jogar = document.getElementById("JogarPvb");
 
 function PvpDisappear() {
     Logo.style.display = "none";

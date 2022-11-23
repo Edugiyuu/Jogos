@@ -24,7 +24,7 @@ function PvP(continuar) {
       mostrarResumoDeVitorias (nomeDoJogador1, nomeDoJogador2)
       
       continuar = prompt(
-        `Quer jogar novamente? responda "1" para Sim ou "2" Para Não `
+        `Quer JogarPvb novamente? responda "1" para Sim ou "2" Para Não `
       );
   }
 
@@ -45,13 +45,13 @@ function PvB(continuar) {
     defineVencedor(escolhaDoJogador, escolhaDoRobo);
 
     continuar = prompt(
-      `Quer jogar novamente? responda "1" para Sim ou "2" Para Não `
+      `Quer JogarPvb novamente? responda "1" para Sim ou "2" Para Não `
     );
   }
 }
 
 function mostraOpcoes() {
-  return prompt(`Digite 1 para Papel 📜 , 2 Para Pedra 🌑 ou 3 para Tesoura ✂️  Para jogar : `)
+  return prompt(`Digite 1 para Papel 📜 , 2 Para Pedra 🌑 ou 3 para Tesoura ✂️  Para JogarPvb : `)
 }
 
 

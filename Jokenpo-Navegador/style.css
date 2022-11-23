@@ -38,6 +38,7 @@ body{
     border-radius: 25px;
     color: white;
 }
+#JogarPvb:hover,
 #Papel:hover,
 #Pedra:hover,
 #Tesoura:hover,
@@ -47,6 +48,7 @@ body{
 .chosePvp:hover{
   transform: scale(1.1);
 }
+#JogarPvb,
 #enviarNomeDoPlayer1,
 #pgInicial,
 #Papel,
@@ -68,7 +70,10 @@ body{
 #pgInicial{
   display: none;
 }
-#jogar{
+#JogarPvb{
+  display: none;
+}
+#JogarPvp{
   display: none;
 }
 #resutadoFinalPvb{
@@ -86,7 +91,7 @@ body{
   }
 }
 
-#colocarNome,#pgInicial,#enviarNomeDoPlayer1,#jogar{
+#colocarNome,#pgInicial,#enviarNomeDoPlayer1,#JogarPvb{
   font-family: 'Comicsans', sans-serif;
   background-color: rgb(254, 254, 254);
   border-color: rgb(7, 7, 7);
@@ -95,11 +100,10 @@ body{
   padding-left: 30px;
   padding-right: 30px;
 }
-#papel:hover,
-#rock:hover,
-#tesoura:hover{
-  transform: scale(1.2);
-  border: 3px solid;
+#Papel:hover,
+#Pedra:hover,
+#Tesoura:hover{
+  border: 5px solid;
   border-color: rgb(21, 255, 0);
 }
 

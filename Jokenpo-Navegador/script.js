@@ -5,9 +5,10 @@ const op = document.getElementById("opções");
 
 const buttonVoltar = document.getElementById("pgInicial");
 const Logo = document.getElementById("logo");
-const Jogar = document.getElementById("jogar");
+const JogarPvb = document.getElementById("JogarPvb");
+const JogarPvp = document.getElementById("JogarPvp");
 const resutadoFinalPvb = document.getElementById("resutadoFinalPvb");
-
+let nomeDoJogador1
 
 console.log(opções);
 function PvpDisappear() {
@@ -17,6 +18,7 @@ function PvpDisappear() {
     nomeDosJogadores.style.display = 'block';
     op.style.display = 'block';
     buttonVoltar.style.display = 'block';
+    JogarPvb.style.display = 'block';
     
 }
 function PvbDisappear() {
@@ -26,20 +28,20 @@ function PvbDisappear() {
     buttonVoltar.style.display = 'block';
     op.style.display = 'block';
     nomeDosJogadores.style.display = 'block';
-    Jogar.style.display = "block"
+    JogarPvb.style.display = "block"
 }
 
 function JogarButtonPvb() {
   buttonVoltar.style.display = 'block';
     op.style.display = 'none';
     nomeDosJogadores.style.display = 'none';
-    Jogar.style.display = "none"
+    JogarPvb.style.display = "none"
   resutadoFinalPvb.style.display= "block"
 }
 
 
 function ArmazenarNome() {
-    var nomeDoJogador1 = document.getElementById("colocarNome").value;
+    nomeDoJogador1 = document.getElementById("colocarNome").value;
     alert(nomeDoJogador1);
 }
 
@@ -47,24 +49,24 @@ function AtualizarPagina() {
     location.reload(true);
 }
 
-function changeColor() {
-  changeColor(green)
-}
-
 const escolhaDoBotMostrar = document.getElementById('escolhaDoBot')
 const EscolhaDoPlayer = document.getElementById('escolhaDoPlayer')
 const resultadoFinal = document.getElementById('resultado')
-const escolhasPossiveis = document.querySelectorAll('.Tesoura, .Pedra, .Papel')
+const escolhasPossiveis = document.querySelectorAll('#Tesoura, #Pedra, #Papel')
 
 escolhasPossiveis.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
   escolhaDoJogador = e.target.id
-  EscolhaDoPlayer.innerHTML = escolhaDoJogador
+  
   GerarEscolhaDoRobo()
   pegarResultado()
+  alertselect()
+  ArmazenarNome()
+  mudarNome(nomeDoJogador1, escolhaDoJogador)
+  
 }))
 
 function GerarEscolhaDoRobo() {
-  const NumeroAleatorio = Math.floor(Math.random() * 3) + 1 
+  const NumeroAleatorio = Math.floor(Math.random() * 3) + 1;
   
   if (NumeroAleatorio === 1) {
     escolhaDoBot = 'Pedra'
@@ -83,7 +85,7 @@ function pegarResultado() {
     resultado = 'Empate'
   }
   if (escolhaDoBot === 'Pedra' && escolhaDoJogador === "Papel") {
-    resultado = `Jogador1 Ganhou`
+    resultado = `${nomeDoJogador1} Ganhou`
   }
   if (escolhaDoBot === 'Pedra' && escolhaDoJogador === "Tesoura") {
     resultado = 'Player1 Perdeu'
@@ -101,4 +103,19 @@ function pegarResultado() {
     resultado = 'Player1 Perdeu'
   }
   resultadoFinal.innerHTML = resultado
+}
+
+function alertselect() {
+  if (escolhaDoJogador === 'Papel') {
+    alert("Papel selecionada")
+  } else if (escolhaDoJogador ==='Pedra') {
+    alert('Pedra selecionada')
+  }else if (escolhaDoJogador ==='Tesoura') {
+    alert('Tesoura selecionada')
+  }
+}
+
+function mudarNome(coco, escolhaDoJogador) {
+  let selecionaLabel = document.getElementById("escolhaPlayer")
+  selecionaLabel.innerHTML = `Escolha Do ${coco}: ${escolhaDoJogador}`
 }

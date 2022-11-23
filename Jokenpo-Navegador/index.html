@@ -23,18 +23,19 @@
     </div>
 
     <div id="opções" class="opções">
-        <button src="./test/Papel.png" id="Papel" class="Papel"onclick=""></button>
-        <button src="./test/Rock.png" id="Pedra" class="Pedra" onclick=""></button>
-        <button src="./test/Tesoura.png" id="Tesoura" class="Tesoura" onclick=""></button>
+        <button src="./test/Papel.png" id="Papel" onclick=""></button>
+        <button src="./test/Rock.png" id="Pedra" onclick=""></button>
+        <button src="./test/Tesoura.png" id="Tesoura" onclick=""></button>
     </div>
     
     <div>
         <button id="pgInicial" onclick="AtualizarPagina()">Voltar</button>
-        <button id="jogar" onclick="JogarButtonPvb()">Jogar</button>
+        <button id="JogarPvb" onclick="JogarButtonPvb()">Jogar</button>
+        <button id="JogarPvp" onclick="">Jogar</button>
     </div>
 
 <div id="resutadoFinalPvb">
-    <h2>Escolha Do Player: <span id="escolhaDoPlayer"></span></h2>
+    <h2 id="escolhaPlayer">Escolha Do Player: <span id="escolhaDoPlayer"></span></h2>
     <h2>Escolha Do bot: <span id="escolhaDoBot"></span></h2>
     <h2>Resultado: <span id="resultado"></span></h2>
 </div>
