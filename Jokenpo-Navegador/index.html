@@ -17,8 +17,18 @@
         <button class="chosePvb" id="pvbButton" onclick="PvbDisappear();">Pvb mode</button>
     </div>
 
+    <div>
+        <h2 id="ColoqueNomePlayer1">Coloque Seu nome Player 1</h2>
+        <h2 id="ColoqueNomePlayer2">Coloque seu nome Player 2</h2>
+    </div>
+
+    <div>
+        <input id="colocarNomeDoPlayer2" type="text" placeholder="Digite seu nome">
+        <input id="enviarNomeDoPlayer2" type="submit" onclick="ArmazenarNomeDoSegundoPlayer2()">
+    </div>
+
     <div id="nomeDosJogadores">
-        <input id="colocarNome" type="text" placeholder="Digite seu nome">
+        <input id="colocarNomeDoPlayer1" type="text" placeholder="Digite seu nome">
         <input id="enviarNomeDoPlayer1" type="submit" placeholder="Digite seu nome" onclick="ArmazenarNome();">
     </div>
 
@@ -31,13 +41,19 @@
     <div>
         <button id="pgInicial" onclick="AtualizarPagina()">Voltar</button>
         <button id="JogarPvb" onclick="JogarButtonPvb()">Jogar</button>
-        <button id="JogarPvp" onclick="">Jogar</button>
+        <button id="JogarPvp" onclick="JogarButtonPvp()">Jogar</button>
     </div>
 
 <div id="resutadoFinalPvb">
     <h2 id="escolhaPlayer">Escolha Do Player: <span id="escolhaDoPlayer"></span></h2>
     <h2>Escolha Do bot: <span id="escolhaDoBot"></span></h2>
-    <h2>Resultado: <span id="resultado"></span></h2>
+    <h2>Resultado: <span id="resultadoPvb"></span></h2>
+</div>
+
+<div id="resutadoFinalPvp">
+    <h2 id="escolhaPlayer">Escolha Do Player: <span id="escolhaDoPlayer"></span></h2>
+    <h2>Escolha Do bot: <span id="escolhaDoBot"></span></h2>
+    <h2>Resultado: <span id="resultadoPvp"></span></h2>
 </div>
     
 

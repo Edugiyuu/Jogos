@@ -26,7 +26,7 @@ function PvbDisappear() {
     Jogar.style.display = "block"
 }
 function ArmazenarNome() {
-    var nomeDoJogador1 = document.getElementById("colocarNome").value;
+    var nomeDoJogador1 = document.getElementById("colocarNomeDoPlayer1").value;
     alert(nomeDoJogador1);
 }
 function AtualizarPagina() {

@@ -68,7 +68,7 @@ body{
   }
 }
 
-#colocarNome,#pgInicial,#enviarNomeDoPlayer1{
+#colocarNomeDoPlayer1,#pgInicial,#enviarNomeDoPlayer1{
   font-family: 'Comicsans', sans-serif;
   background-color: rgb(254, 254, 254);
   border-color: rgb(7, 7, 7);

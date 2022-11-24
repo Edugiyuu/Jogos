@@ -1,42 +1,42 @@
 * {
-    margin-bottom: 30px;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin-bottom: 30px;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body{
-     width: fit-content;
-     margin: auto;
-     padding-top: 52px;
-    background: rgb(142,209,252);
-    background: linear-gradient(90deg, rgba(98,138,255,1) 0%, rgb(63, 255, 178) 100%);
+   width: fit-content;
+   margin: auto;
+   padding-top: 52px;
+  background: rgb(142,209,252);
+  background: linear-gradient(90deg, rgba(98,138,255,1) 0%, rgb(63, 255, 178) 100%);
 
 }
 
 
 #Tesoura{
-  background-image:url("test/Tesoura.png");
-  padding: 64px;
-  background-color: rgba(240, 248, 255, 0);
+background-image:url("test/Tesoura.png");
+padding: 64px;
+background-color: rgba(240, 248, 255, 0);
 }
 #Pedra{
-  background-image:url("test/Rock.png");
-  padding: 64px;
-  background-color: rgba(240, 248, 255, 0);
+background-image:url("test/Rock.png");
+padding: 64px;
+background-color: rgba(240, 248, 255, 0);
 }
 #Papel{
-  background-image:url("test/Papel.png");
-  padding: 64px;
-  background-color: rgba(240, 248, 255, 0);
+background-image:url("test/Papel.png");
+padding: 64px;
+background-color: rgba(240, 248, 255, 0);
 }
 .chosePvp,.chosePvb{
-    display: flex;
-    padding: 25px;
-    text-align: center;
-    
-    background-color: rgb(7, 7, 7);
-    border-radius: 25px;
-    color: white;
+  display: flex;
+  padding: 25px;
+  text-align: center;
+  
+  background-color: rgb(7, 7, 7);
+  border-radius: 25px;
+  color: white;
 }
 #JogarPvb:hover,
 #Papel:hover,
@@ -46,7 +46,7 @@ body{
 #pgInicial:hover,
 .chosePvb:hover,
 .chosePvp:hover{
-  transform: scale(1.1);
+transform: scale(1.1);
 }
 #JogarPvb,
 #enviarNomeDoPlayer1,
@@ -56,58 +56,49 @@ body{
 #Tesoura,
 #pvpButton,
 #pvbButton{
-  transition: transform 0.3s;
+transition: transform 0.3s;
 }
 
 #opções{
-  display: none;
-  margin: 20x;
+display: none;
+margin: 20x;
 }
-#nomeDosJogadores{
-  display: none;
-  align-items: center;
+#colocarNomeDoPlayer1, #enviarNomeDoPlayer1, #colocarNomeDoPlayer2, #enviarNomeDoPlayer2{
+display: none;
+align-items: center;
 }
-#pgInicial{
-  display: none;
-}
-#JogarPvb{
-  display: none;
-}
-#JogarPvp{
-  display: none;
-}
-#resutadoFinalPvb{
-  display: none;
+#resutadoFinalPvb, #ColoqueNomePlayer1, #ColoqueNomePlayer1, #JogarPvb, #JogarPvp, #pgInicial, #ColoqueNomePlayer2{
+display: none;
 }
 
 @keyframes appear {
-  0% {
-    transform: translateX(-120px);
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
+0% {
+  transform: translateX(-120px);
+  opacity: 0;
 }
 
-#colocarNome,#pgInicial,#enviarNomeDoPlayer1,#JogarPvb{
-  font-family: 'Comicsans', sans-serif;
-  background-color: rgb(254, 254, 254);
-  border-color: rgb(7, 7, 7);
-  border-radius: 15px;
-  padding: 4px;
-  padding-left: 30px;
-  padding-right: 30px;
+100% {
+  opacity: 1;
+}
+}
+
+#colocarNomeDoPlayer1,#pgInicial,#enviarNomeDoPlayer1,#JogarPvb,#JogarPvp, #enviarNomeDoPlayer2, #colocarNomeDoPlayer2{
+font-family: 'Comicsans', sans-serif;
+background-color: rgb(254, 254, 254);
+border-color: rgb(7, 7, 7);
+border-radius: 15px;
+padding: 4px;
+padding-left: 30px;
+padding-right: 30px;
 }
 #Papel:hover,
 #Pedra:hover,
 #Tesoura:hover{
-  border: 5px solid;
-  border-color: rgb(21, 255, 0);
+border: 5px solid;
+border-color: rgb(21, 255, 0);
 }
 
 
-#resutadoFinalPvb{
-  font-family: 'Comicsans', sans-serif;
+#resutadoFinalPvb, #ColoqueNomePlayer1, #ColoqueNomePlayer2{
+font-family: 'Comicsans', sans-serif;
 }
