@@ -16,17 +16,17 @@ body{
 
 #Tesoura{
 background-image:url("test/Tesoura.png");
-padding: 64px;
+padding: 62px;
 background-color: rgba(240, 248, 255, 0);
 }
 #Pedra{
 background-image:url("test/Rock.png");
-padding: 64px;
+padding: 62px;
 background-color: rgba(240, 248, 255, 0);
 }
 #Papel{
 background-image:url("test/Papel.png");
-padding: 64px;
+padding: 62px;
 background-color: rgba(240, 248, 255, 0);
 }
 .chosePvp,.chosePvb{

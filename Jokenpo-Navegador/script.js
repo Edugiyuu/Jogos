@@ -69,7 +69,6 @@ function JogarButtonPvp() {
 
 function ArmazenarNome() {
     nomeDoJogador1 = document.getElementById("colocarNomeDoPlayer1").value;
-    alert(nomeDoJogador1);
     console.log(nomeDoJogador1);
 }
 function ArmazenarNomeDoSegundoPlayer2() {
@@ -93,7 +92,7 @@ escolhasPossiveis.forEach(possibleChoice => possibleChoice.addEventListener('cli
   
   GerarEscolhaDoRobo()
   pegarResultadoPvb()
-  alertselect()
+  //alertselect()
   ArmazenarNome()
   mudarNome(nomeDoJogador1, escolhaDoJogador)
   
@@ -133,19 +132,19 @@ function pegarResultadoPvb() {
     resultado = `${nomeDoJogador1} Ganhou`
   }
   if (escolhaDoBot === 'Pedra' && escolhaDoJogador === "Tesoura") {
-    resultado = 'Player1 Perdeu'
+    resultado = `${nomeDoJogador1} Perdeu`
   }
   if (escolhaDoBot === 'Papel' && escolhaDoJogador === "Tesoura") {
     resultado = `${nomeDoJogador1} Ganhou`
   }
   if (escolhaDoBot === 'Papel' && escolhaDoJogador === "Pedra") {
-    resultado = 'Player1 Perdeu'
+    resultado = `${nomeDoJogador1} Perdeu`
   }
   if (escolhaDoBot === 'Tesoura' && escolhaDoJogador === "Pedra") {
     resultado = `${nomeDoJogador1} Ganhou`
   }
   if (escolhaDoBot === 'Tesoura' && escolhaDoJogador === "Papel") {
-    resultado = 'Player1 Perdeu'
+    resultado = `${nomeDoJogador1} Perdeu`
   }
   resultadoFinalPvb.innerHTML = resultado
 }
