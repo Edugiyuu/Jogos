@@ -11,28 +11,31 @@
     <div id="logo">
         <img src="test/Logo.png">
     </div>
-
     <div id="pvpEpvb">
         <button class="chosePvp" id="pvpButton" onclick="PvpDisappear()">Pvp mode</button>
-        <button class="chosePvb" id="pvbButton" onclick="PvbDisappear()">Pvb mode</button>
+        <button class="chosePvb" id="pvbButton" onclick="PvbDisappear();">Pvb mode</button>
     </div>
-
     <div id="nomeDosJogadores">
-        <input id="colocarNomeDoPlayer1" type="text" placeholder="Digite seu nome">
+        <input id="colocarNome" type="text" placeholder="Digite seu nome">
         <input id="enviarNomeDoPlayer1" type="submit" placeholder="Digite seu nome" onclick="ArmazenarNome();">
     </div>
-
-    <div id="opções">
-        <img src="./test/Papel.png" id="papel">
-        <img src="./test/Rock.png" id="pedra">
-        <img src="./test/Tesoura.png" id="tesoura">
+    <div id="opções" class="opções">
+        <button src="./test/Papel.png" id="Papel" class="Papel"onclick=""></button>
+        <button src="./test/Rock.png" id="Pedra" class="Pedra" onclick=""></button>
+        <button src="./test/Tesoura.png" id="Tesoura" class="Tesoura" onclick=""></button>
     </div>
     
     <div>
         <button id="pgInicial" onclick="AtualizarPagina()">Voltar</button>
-        <button id="JogarPvb">Jogar</button>
+        <button id="jogar" onclick="JogarButtonPvb()">Jogar</button>
     </div>
 
+<div id="resutadoFinalPvb">
+    <h2>Escolha Do Player: <span id="escolhaDoPlayer"></span></h2>
+    <h2>Escolha Do bot: <span id="escolhaDoBot"></span></h2>
+    <h2>Resultado: <span id="resultado"></span></h2>
+</div>
+    
     <script src="script.js"></script>
 </body>
 </html>
