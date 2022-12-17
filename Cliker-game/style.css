@@ -5,11 +5,20 @@
     background-color: black;
     padding-top: 30px;
   }
-
+  footer{
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: flex-end;
+    font-family: 'Press Start 2P';
+    font-size: 8px;
+  }
   #Contador{
     color: rgb(255, 255, 255);
     font-family: 'Press Start 2P';
     font-size: 100%;
+  }
+  #NumerosDoContador{
+    color: rgb(255, 19, 19);
   }
   #TodosOsClicks{
     display: flex;
@@ -28,17 +37,63 @@
     padding: 20px;
   }
 
+  #Pacience:hover,#Bondade:hover,#Bravura:hover,#Justice:hover,#Perseverança:hover,#Integridade:hover{
+    transform: scale(1.1);
+    transition: transform 0.4s;
+    border: 3px solid rgb(255, 255, 0);
+  }
+  #DeterminacaoPng:hover{
+    transform: scale(1.2);
+    transition: transform 0.4s;
+  }
   p{
     color: rgb(255, 255, 255);
     font-family: 'Press Start 2P';
-    font-size: 8px;
+    font-size: 9px;
     border: 3px solid white;
     padding: 10px;
-    left: 60px;
+    margin-bottom: 10px;
   }
+  #TituloUpgrade{
+    align-self: flex-end;
+    color: rgb(255, 255, 255);
+    font-family: 'Press Start 2P';
+    border: 3px solid white;
+    padding: 15px;
+  }
+  #TituloUpgrade:hover{
+    align-self: flex-end;
+    color: rgb(255, 247, 0);
+    font-family: 'Press Start 2P';
+    border: 3px solid rgb(255, 247, 0);
+    padding: 15px;
+  }
+  
   #Upgrades{
     display: flex;
     padding-top: 190px;
     justify-content: space-around;
     align-items: flex-end;
   }
+
+  @media screen and (max-width: 520px) {
+    #Pacience,#Bondade,#Bravura,#Justice,#Perseverança,#Integridade{
+      width: 50px;
+      border: 3px solid white;
+      padding: 20px;
+    }
+    #Upgrades{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #TituloUpgrade{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+    }
+
+    }
