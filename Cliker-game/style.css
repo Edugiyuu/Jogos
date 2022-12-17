@@ -1,0 +1,44 @@
+
+  body{
+    margin: auto;
+    padding-top: 52px;
+    background-color: black;
+    padding-top: 30px;
+  }
+
+  #Contador{
+    color: rgb(255, 255, 255);
+    font-family: 'Press Start 2P';
+    font-size: 100%;
+  }
+  #TodosOsClicks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 20px;
+  }
+
+  #DeterminacaoPng{
+    width: 100px;
+  }
+  #Pacience,#Bondade,#Bravura,#Justice,#Perseverança,#Integridade{
+    width: 50px;
+    border: 3px solid white;
+    padding: 20px;
+  }
+
+  p{
+    color: rgb(255, 255, 255);
+    font-family: 'Press Start 2P';
+    font-size: 8px;
+    border: 3px solid white;
+    padding: 10px;
+    left: 60px;
+  }
+  #Upgrades{
+    display: flex;
+    padding-top: 190px;
+    justify-content: space-around;
+    align-items: flex-end;
+  }
