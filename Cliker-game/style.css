@@ -54,12 +54,34 @@
     padding: 10px;
     margin-bottom: 10px;
   }
-  #TituloUpgrade{
+  #TituloUpgrade,a{
+    display: flex;
     align-self: flex-end;
     color: rgb(255, 255, 255);
     font-family: 'Press Start 2P';
     border: 3px solid white;
     padding: 15px;
+  }
+
+  a{
+    display: flex;
+    align-self: center;
+    color: rgb(255, 255, 255);
+    font-family: 'Press Start 2P';
+    border: 3px solid white;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 8px;
+  }
+
+  #ComoJogar{
+    align-self: center;
+    color: rgb(255, 255, 255);
+    font-family: 'Press Start 2P';
+    border: 3px solid rgb(255, 255, 255);
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 15px;
   }
   #TituloUpgrade:hover{
     align-self: flex-end;
@@ -67,6 +89,15 @@
     font-family: 'Press Start 2P';
     border: 3px solid rgb(255, 247, 0);
     padding: 15px;
+  }
+
+  a:hover,#ComoJogar:hover{
+    align-self: center;
+    color: rgb(255, 247, 0);
+    font-family: 'Press Start 2P';
+    border: 3px solid rgb(255, 247, 0);
+    padding: 10px;
+    margin-top: 10px;
   }
   
   #Upgrades{
@@ -93,7 +124,9 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      
     }
-
+    a{
+       
+    }
+    
     }

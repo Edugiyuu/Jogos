@@ -1,0 +1,39 @@
+body{
+    background-color: rgb(0, 0, 0);
+}
+
+p{
+    color: rgb(255, 255, 255);
+    font-family: 'Press Start 2P';
+    font-size: 12px;
+    
+    padding: 10px;
+    margin-bottom: 10px;
+    height: auto;
+}
+
+h1{
+    color: rgb(255, 255, 255);
+    font-family: 'Press Start 2P';
+    font-size: 15px;
+    
+    padding: 10px;
+    margin-bottom: 10px;
+    height: auto;
+}
+
+img{
+    width: 100%;
+    border: 2px solid white;
+}
+
+span{
+    color: rgb(249, 12, 12);
+    font-family: 'Press Start 2P';
+    font-family: 'Press Start 2P';
+    font-size: 15px;
+    
+    padding: 10px;
+    margin-bottom: 10px;
+    height: auto;
+}
