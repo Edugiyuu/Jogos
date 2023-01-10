@@ -12,25 +12,33 @@ InfoJustice.style.display = 'none'
 const Info = document.querySelector('#Info')
 const NumerosDoContador = document.querySelector('#NumerosDoContador')
 const DeterminacaoPng = document.querySelector('#DeterminacaoPng')
-var valor = 0
+var valor = 900
+var valorDoClick = 1
 
 function CadaClick() {
     NumerosDoContador.innerHTML = ++valor
 
     if (verificarPaciencia == true) {
         NumerosDoContador.innerHTML = valor += 1
-        Info.innerHTML = "2"
-    }else if(verificarBondade == true){
+        Info.innerHTML = `${valorDoClick + 1}`
+    }
+    if(verificarBondade == true){
+        NumerosDoContador.innerHTML = valor += 1
+        Info.innerHTML = `${valorDoClick + 1}`
+    }
+    if(verificarBravura == true){
         NumerosDoContador.innerHTML = valor += 2
-        Info.innerHTML = "3"
-    }else if(verificarBravura == true){
-        NumerosDoContador.innerHTML = valor += 4
-        Info.innerHTML = "5"
-    }else if(verificarJustice == true){
-        NumerosDoContador.innerHTML = valor += 6
-        Info.innerHTML = "7"
+        Info.innerHTML = `${valorDoClick =+ 2}`
+    }
+    if(verificarJustice == true){
+        NumerosDoContador.innerHTML = valor += 2
+        Info.innerHTML = `${valorDoClick + 2}`
     }
 }
+    verificarPaciencia = false
+    verificarJustice = false
+    verificarBravura = false
+    verificarBondade = false
 DeterminacaoPng.addEventListener('click',CadaClick)
 DeterminacaoPng.addEventListener('click',AudioSelect)
 //------------------------------------------------------------- Paciencia
@@ -65,7 +73,6 @@ function CheckAndBuyBondade() {
         Bondade.style.display = 'none'
         InfoBondade.style.display = 'block'
         verificarBondade = true
-        verificarPaciencia = false
 
     }else{
         alert('Sem Determinação Suficiente');
@@ -85,8 +92,6 @@ function CheckAndBuyBravura() {
         Bravura.style.display = 'none'
         InfoBravura.style.display = 'block'
         verificarBravura = true
-        verificarBondade = false
-        verificarPaciencia = false
         
 
     }else{
@@ -108,9 +113,7 @@ function CheckAndBuyJustice() {
         Justice.style.display = 'none'
         InfoJustice.style.display = 'block'
         verificarJustice = true
-        verificarBravura = false
-        verificarBondade = false
-        verificarPaciencia = false
+
         
 
     }else{
