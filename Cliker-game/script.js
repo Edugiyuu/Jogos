@@ -14,6 +14,7 @@ InfoPerseverança.style.display='none'
 const Info = document.querySelector('#Info')
 const NumerosDoContador = document.querySelector('#NumerosDoContador')
 const DeterminacaoPng = document.querySelector('#DeterminacaoPng')
+const MostreNumero = document.querySelector('.ShowClick')
 var valor = 900
 var valorDoClick = 1
 
@@ -37,6 +38,14 @@ function CadaClick() {
         NumerosDoContador.innerHTML = valor += 3
     }
 }
+function AnimaçãoClick() {
+        MostreNumero.style.animation = "";
+        setTimeout(() => MostreNumero.style.animation = " show .9s forwards", 5);
+        MostreNumero.innerHTML = `${valorDoClick + 0}+`
+}
+
+
+
     verificarPaciencia = false
     verificarJustice = false
     verificarBravura = false
@@ -44,6 +53,7 @@ function CadaClick() {
     verificarPerseverança = false
 DeterminacaoPng.addEventListener('click',CadaClick)
 DeterminacaoPng.addEventListener('click',AudioSelect)
+DeterminacaoPng.addEventListener('click',AnimaçãoClick)
 //------------------------------------------------------------- Paciencia
 
 const PreçoPaciencia = document.querySelector('#PreçoPaciencia')
@@ -58,6 +68,7 @@ function CheckAndBuyPacience() {
         InfoPaciencia.style.display = 'block'
         verificarPaciencia = true
         Info.innerHTML = `${valorDoClick += 1}`
+        MostreNumero.innerHTML = `${valorDoClick + 1}`
         
     }else{
         alert('Sem Determinação Suficiente');
@@ -78,6 +89,7 @@ function CheckAndBuyBondade() {
         InfoBondade.style.display = 'block'
         verificarBondade = true
         Info.innerHTML = `${valorDoClick += 1}`
+        MostreNumero.innerHTML = `${valorDoClick + 1}`
 
     }else{
         alert('Sem Determinação Suficiente');
@@ -98,6 +110,7 @@ function CheckAndBuyBravura() {
         InfoBravura.style.display = 'block'
         verificarBravura = true
         Info.innerHTML = `${valorDoClick += 2}`
+        MostreNumero.innerHTML = `${valorDoClick + 2}`
 
     }else{
         alert('Sem Determinação Suficiente');
@@ -119,6 +132,7 @@ function CheckAndBuyJustice() {
         InfoJustice.style.display = 'block'
         verificarJustice = true
         Info.innerHTML = `${valorDoClick += 2}`
+        MostreNumero.innerHTML = `${valorDoClick + 2}`
 
     }else{
         alert('Sem Determinação Suficiente');
@@ -139,6 +153,7 @@ function CheckAndBuyPerseverança() {
         InfoPerseverança.style.display = 'block'
         verificarPerseverança = true
         Info.innerHTML = `${valorDoClick += 3}`
+        MostreNumero.innerHTML = `${valorDoClick + 3}`
 
     }else{
         alert('Sem Determinação Suficiente');
