@@ -15,7 +15,7 @@ const Info = document.querySelector('#Info')
 const NumerosDoContador = document.querySelector('#NumerosDoContador')
 const DeterminacaoPng = document.querySelector('#DeterminacaoPng')
 const MostreNumero = document.querySelector('.ShowClick')
-var valor = 900
+var valor = 0
 var valorDoClick = 1
 
 function CadaClick() {
