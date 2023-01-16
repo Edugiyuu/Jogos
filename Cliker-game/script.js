@@ -4,6 +4,9 @@ const InfoBravura = document.querySelector('#InfoBravura')
 const InfoJustice = document.querySelector('#InfoJustice')
 const InfoPerseverança = document.querySelector('#InfoPerseverança')
 
+const TituloUpgrade = document.querySelector('#TituloUpgrade')
+
+
 InfoPaciencia.style.display = 'none'
 InfoBondade.style.display = 'none'
 InfoBravura.style.display = 'none'
@@ -40,11 +43,15 @@ function CadaClick() {
 }
 function AnimaçãoClick() {
         MostreNumero.style.animation = "";
-        setTimeout(() => MostreNumero.style.animation = " show .9s forwards", 5);
+        setTimeout(() => MostreNumero.style.animation = " AnimationClickNumber .8s forwards", 5);
         MostreNumero.innerHTML = `${valorDoClick + 0}+`
+
+        DeterminacaoPng.style.animation = ""
+        setTimeout(() => DeterminacaoPng.style.animation = " AnimationClickCoracao .1s forwards", 5);
+
+        NumerosDoContador.style.animation = ""
+        setTimeout(() => NumerosDoContador.style.animation = " AnimationContador .2s forwards", 5);
 }
-
-
 
     verificarPaciencia = false
     verificarJustice = false
@@ -174,5 +181,13 @@ function AudioCredit() {
     const AudioCredit = document.querySelector('#AudioCredit')
     AudioCredit.play()
 }
-const TituloUpgrade = document.querySelector('#TituloUpgrade')
+
+const CaixaPaciencia = document.querySelector('#CaixaPaciencia')
+
+function Esconder() {
+    CaixaPaciencia.style.display = 'none'
+}
+
+
 TituloUpgrade.addEventListener('click',AudioCredit)
+TituloUpgrade.addEventListener('click',Esconder)
