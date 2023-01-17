@@ -11,6 +11,7 @@
     align-items: flex-end;
     font-family: 'Press Start 2P';
     font-size: 8px;
+    padding-left: 20px;
   }
   #Contador{
     color: rgb(255, 255, 255);
@@ -30,7 +31,8 @@
 
   #DeterminacaoPng{
     width: 100px;
-    animation: show;
+    
+
   }
   #Pacience,#Bondade,#Bravura,#Justice,#Perseverança,#Integridade{
     width: 50px;
@@ -43,10 +45,7 @@
     transition: transform 0.4s;
     border: 3px solid rgb(255, 255, 0);
   }
-  #DeterminacaoPng{
-    transform: scale(1.1);
-    transition: transform 0.4s;
-  }
+  
   p{
     color: rgb(255, 255, 255);
     font-family: 'Press Start 2P';
@@ -55,13 +54,13 @@
     padding: 10px;
     margin-bottom: 10px;
   }
-  #TituloUpgrade,a{
+  a{
     display: flex;
     align-self: flex-end;
     color: rgb(255, 255, 255);
     font-family: 'Press Start 2P';
     border: 3px solid white;
-    padding: 15px;
+    padding: 13px;
   }
 
   a{
@@ -75,24 +74,23 @@
     font-size: 8px;
   }
 
-  #ComoJogar{
-    align-self: center;
+  #ComoJogar,#Zerar,#TituloUpgrade{
     color: rgb(255, 255, 255);
     font-family: 'Press Start 2P';
     border: 3px solid rgb(255, 255, 255);
     padding: 10px;
     margin-top: 10px;
     font-size: 15px;
+    text-align: center;
   }
-  #TituloUpgrade:hover{
-    align-self: flex-end;
+  #TituloUpgrade:hover,#ComoJogar:hover,#Zerar:hover{
     color: rgb(255, 247, 0);
     font-family: 'Press Start 2P';
     border: 3px solid rgb(255, 247, 0);
-    padding: 15px;
+    padding: 10px;
   }
 
-  a:hover,#ComoJogar:hover{
+  a:hover{
     align-self: center;
     color: rgb(255, 247, 0);
     font-family: 'Press Start 2P';
@@ -103,7 +101,7 @@
   
   #Upgrades{
     display: flex;
-    padding-top: 190px;
+    padding-top: 185px;
     justify-content: space-around;
     align-items: flex-end;
   }
@@ -120,12 +118,7 @@
       justify-content: center;
       align-items: center;
     }
-    #TituloUpgrade{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+
     }
     .ShowClick{
       color: rgb(255, 255, 255);
@@ -173,4 +166,10 @@
         font-size: 16px;
         color: red;
       }
+    }
+
+    #Buttons{
+      flex-direction: column;
+      justify-content: space-between;
+      
     }

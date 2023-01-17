@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css"/>
+    <link rel="stylesheet" href="./style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div id="TodosOsClicks">
         <h2 id="Contador">Determinação:<span id="NumerosDoContador">0</span></h2>
-        <p class = "ShowClick">1</p>
+        <p class="ShowClick">1</p>
         <img src="./Imagens/Determination.png" id="DeterminacaoPng">
         <a>Determinação por Click:<span id="Info">1</span></a>
     </div>
 
-    
+
     <audio src="./audios/undertale-select-sound.mp3" id="AudioSelect"></audio>
     <audio src="./audios/sqek.mp3" id="AudioCredit"></audio>
 
     <div id="Upgrades">
-    <div>
-        <a href="./Como-jogar/index2.html" id="ComoJogar">Como jogar?</a>
-        <h3 id="TituloUpgrade">Upgrades</h3>
-    </div>
-    
+
+        <div id="Buttons">
+            <p id="Zerar">Reset</p>
+            <a href="./Como-jogar/index2.html" id="ComoJogar">Como jogar?</a>
+            <p id="TituloUpgrade">Upgrades</p>
+        </div>
+
+
         <div id="CaixaPaciencia">
             <p id="PreçoPaciencia">Paciencia: 30</p>
             <img src="./Imagens/Pacience.png" id="Pacience">
@@ -40,7 +45,7 @@
             <p id="InfoBondade">1+ Determinação</p>
         </div>
 
-        <div id ="CaixaBravura">
+        <div id="CaixaBravura">
             <p id="PreçoBravura">Bravura: 280</p>
             <img src="./Imagens/Bravura (2).png" id="Bravura">
             <p id="InfoBravura">2+ Determinação</p>
@@ -50,21 +55,23 @@
             <img src="./Imagens/Justice.png" id="Justice">
             <p id="InfoJustice">2+ Determinação</p>
         </div>
-        
+
         <div>
             <p id="PreçoPerseverança">Perseverança: 680</p>
-           <img src="./Imagens/Perseverança.png" id="Perseverança"> 
-           <p id="InfoPerseverança">3+ Determinação</p>
+            <img src="./Imagens/Perseverança.png" id="Perseverança">
+            <p id="InfoPerseverança">3+ Determinação</p>
         </div>
-        
+
         <div>
             <p>Integridade: 800</p>
             <img src="./Imagens/Integridade.png" id="Integridade">
         </div>
-        
+
+
     </div>
-    
+
     <script src="script.js"></script>
     <footer>Made by @edu_mayash :)</footer>
 </body>
+
 </html>
