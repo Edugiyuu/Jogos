@@ -49,9 +49,15 @@ function AnimaçãoClick() {
         DeterminacaoPng.style.animation = ""
         setTimeout(() => DeterminacaoPng.style.animation = " AnimationClickCoracao .1s forwards", 5);
 
+
+
+
         NumerosDoContador.style.animation = ""
         setTimeout(() => NumerosDoContador.style.animation = " AnimationContador .2s forwards", 5);
 }
+
+
+
 
     verificarPaciencia = false
     verificarJustice = false
@@ -61,6 +67,8 @@ function AnimaçãoClick() {
 DeterminacaoPng.addEventListener('click',CadaClick)
 DeterminacaoPng.addEventListener('click',AudioSelect)
 DeterminacaoPng.addEventListener('click',AnimaçãoClick)
+
+DeterminacaoPng.style.animation = " IdleCoracao .8s infinite ease-in-out", 5;
 //------------------------------------------------------------- Paciencia
 
 const PreçoPaciencia = document.querySelector('#PreçoPaciencia')
@@ -184,10 +192,5 @@ function AudioCredit() {
 
 const CaixaPaciencia = document.querySelector('#CaixaPaciencia')
 
-function Esconder() {
-    CaixaPaciencia.style.display = 'none'
-}
-
 
 TituloUpgrade.addEventListener('click',AudioCredit)
-TituloUpgrade.addEventListener('click',Esconder)

@@ -151,11 +151,18 @@
         filter: blur(5px)
       }
       to {
+        
         transform: translate3d(0,0,0);
         color: white;
         
       }
     }
+
+    @keyframes IdleCoracao{
+      25%{transform: rotate(-5deg);}
+      75%{transform: rotate(5deg);}
+    }
+
     
     @keyframes AnimationContador{
       from {
