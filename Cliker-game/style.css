@@ -31,8 +31,54 @@
 
   #DeterminacaoPng{
     width: 100px;
-    
-
+  }
+  #PacienceComprada{
+    position: relative;
+    position:absolute;
+    width:30px;
+    bottom:420px;
+    left:570px;
+    display: none
+  }
+  #BondadeComprada{
+    position: relative;
+    position:absolute;
+    width:30px;
+    bottom:480px;
+    left:580px;
+    display: none
+  }
+  #BravuraComprada{
+    position: relative;
+    position:absolute;
+    width:30px;
+    bottom:525px;
+    left:630px;
+    display: none
+  }
+  #JusticeComprada{
+    position: relative;
+    position:absolute;
+    width:30px;
+    bottom:525px;
+    left:705px;
+    display: none
+  }
+  #PerseverançaComprada{
+    position: relative;
+    position:absolute;
+    width:30px;
+    bottom:480px;
+    left:750px;
+    display: none
+  }
+  #IntegridadeComprada{
+    position: relative;
+    position:absolute;
+    width:30px;
+    bottom:420px;
+    left:760px;
+    display: none
   }
   #Pacience,#Bondade,#Bravura,#Justice,#Perseverança,#Integridade{
     width: 50px;
@@ -106,12 +152,63 @@
     align-items: flex-end;
   }
 
+
+
   @media screen and (max-width: 600px) {
     #Pacience,#Bondade,#Bravura,#Justice,#Perseverança,#Integridade{
       width: 50px;
       border: 3px solid white;
       padding: 20px;
     }
+    #PacienceComprada{
+      position: relative;
+      position:absolute;
+      width:30px;
+      bottom:405px;
+      left:130px;
+      display: none
+    }
+    #BondadeComprada{
+      position: relative;
+      position:absolute;
+      width:30px;
+      bottom:465px;
+      left:140px;
+      display: none
+    }
+    #BravuraComprada{
+      position: relative;
+      position:absolute;
+      width:30px;
+      bottom:510px;
+      left:195px;
+      display: none
+    }
+    #JusticeComprada{
+      position: relative;
+      position:absolute;
+      width:30px;
+      bottom:510px;
+      left:255px;
+      display: none
+    }
+    #PerseverançaComprada{
+      position: relative;
+      position:absolute;
+      width:30px;
+      bottom:465px;
+      left:310px;
+      display: none
+    }
+    #IntegridadeComprada{
+      position: relative;
+      position:absolute;
+      width:30px;
+      bottom:405px;
+      left:325px;
+      display: none
+    }
+    
     #Upgrades{
       display: flex;
       flex-direction: column;
@@ -159,8 +256,12 @@
     }
 
     @keyframes IdleCoracao{
-      25%{transform: rotate(-5deg);}
-      75%{transform: rotate(5deg);}
+      25%{transform: rotate(-4deg);}
+      75%{transform: rotate(4deg);}
+    }
+    @keyframes IdleCaixa{
+      25%{transform: rotate(-2deg);}
+      75%{transform: rotate(2deg);}
     }
 
     
@@ -178,5 +279,6 @@
     #Buttons{
       flex-direction: column;
       justify-content: space-between;
+      
       
     }
