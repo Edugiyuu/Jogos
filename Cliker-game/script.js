@@ -229,8 +229,26 @@ Integridade.addEventListener('click',CheckAndBuyIntegridade)
 
 //------------------------------------------------------------
 
+const Upgrades = document.querySelector('#Upgrades')
+const Reset = document.querySelector('#Reset')
+const ClickInfo = document.querySelector('#ClickInfo')
+const Contador = document.querySelector('#Contador')
 
-
+function reset() {
+    if (valorDoClick === 13) {
+        Reset.addEventListener('click',SavePoint)
+        Upgrades.style.animation = " ResetAnimation 3s forwards", 5;
+        ClickInfo.style.animation = " ResetAnimation 3s forwards", 5;
+        Contador.style.animation = " ResetAnimation 3s forwards", 5;
+        Upgrades.style.display = 'none'
+        ClickInfo.style.display = 'none'
+        Contador.style.display = 'none'
+    }else{
+        Reset.addEventListener('click',AudioCredit)
+    }
+}
+Reset.addEventListener('click',reset)
+//---------------------------------------------------------------
 function AudioSelect() {
     const AudioSelect = document.querySelector('#AudioSelect')
     AudioSelect.play()
@@ -238,6 +256,10 @@ function AudioSelect() {
 function AudioCredit() {
     const AudioCredit = document.querySelector('#AudioCredit')
     AudioCredit.play()
+}
+function SavePoint() {
+    const SavePoint = document.querySelector('#SavePoint')
+    SavePoint.play()
 }
 
 
