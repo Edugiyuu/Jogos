@@ -240,9 +240,7 @@ function reset() {
         Upgrades.style.animation = " ResetAnimation 3s forwards", 5;
         ClickInfo.style.animation = " ResetAnimation 3s forwards", 5;
         Contador.style.animation = " ResetAnimation 3s forwards", 5;
-        Upgrades.style.display = 'none'
-        ClickInfo.style.display = 'none'
-        Contador.style.display = 'none'
+
     }else{
         Reset.addEventListener('click',AudioCredit)
     }

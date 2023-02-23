@@ -154,14 +154,14 @@
 
 
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 530px) {
     #Pacience,#Bondade,#Bravura,#Justice,#Perseverança,#Integridade{
       width: 50px;
       border: 3px solid white;
       padding: 20px;
     }
     #PacienceComprada{
-      position: relative;
+      display:flex;
       position:absolute;
       width:30px;
       bottom:405px;
