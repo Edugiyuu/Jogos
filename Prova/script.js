@@ -45,7 +45,7 @@ function IniciarProva() {
     console.log(`Sua nota foi ${notaFinal} de ${perguntas.length}`);
     
   }else{
-    Iniciar = prompt('neee')
+    Iniciar = prompt('')
   }
 }
 
