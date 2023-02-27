@@ -16,12 +16,15 @@ var respostas = ["c", "b", "a"];
 var notaFinal = 0
 
 function perguntasErespostas() {
+
   for (let i = 0; i < perguntas.length; i++) {
-    console.log(perguntas[i]);
-    console.log(opcoes[i]);
+    var pergutaAleatoria = Math.floor(Math.random() * perguntas.length);
+
+    console.log(perguntas[pergutaAleatoria]);
+    console.log(opcoes[pergutaAleatoria]);
     var suaResposta = prompt('Sua resposta: ')
 
-    if (suaResposta == respostas[i]) {
+    if (suaResposta == respostas[pergutaAleatoria]) {
       notaFinal += 1
     }
   }
