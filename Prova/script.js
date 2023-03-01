@@ -1,9 +1,6 @@
 const prompt = require("prompt-sync")({ sigint: true });
 
-
-var perguntas = [
-  "Em que ano o nintendo switch foi lançado?",  "Em que ano o xbox 360 foi lançado?",  "Em que ano o playstation 4 foi lançado?"
-];
+var perguntas = ["Em que ano o Nintendo Switch foi lançado?", "Em que ano o Xbox 360 foi lançado?", "Em que ano o PlayStation 4 foi lançado?"];
 var opcoes = [
   "a) 2014, b) 2019, c) 2017",
   "a) 2013, b) 2005, c) 2010",
@@ -12,37 +9,42 @@ var opcoes = [
 
 var respostas = ["c", "b", "a"];
 
-
-var notaFinal = 0
+let notaFinal = 0;
 
 function perguntasErespostas() {
+  const copiaDePerguntas = perguntas.slice();
+  const copiaDeOpcoes = opcoes.slice();
+  const copiaDeRespostas = respostas.slice(); 
 
   for (let i = 0; i < perguntas.length; i++) {
-    var pergutaAleatoria = Math.floor(Math.random() * perguntas.length);
+    const perguntaAleatoria = Math.floor(Math.random() * copiaDePerguntas.length);
 
-    console.log(perguntas[pergutaAleatoria]);
-    console.log(opcoes[pergutaAleatoria]);
-    var suaResposta = prompt('Sua resposta: ')
+    console.log(perguntaAleatoria);
+    console.log(copiaDePerguntas.length);
 
-    if (suaResposta == respostas[pergutaAleatoria]) {
-      notaFinal += 1
+    console.log(copiaDePerguntas[perguntaAleatoria]);
+    console.log(copiaDeOpcoes[perguntaAleatoria]);
+    var suaResposta = prompt('Sua resposta: ');
+
+    if (suaResposta == copiaDeRespostas[perguntaAleatoria]) {
+      notaFinal += 1;
     }
+
+    copiaDePerguntas.splice(perguntaAleatoria, 1);
+    copiaDeOpcoes.splice(perguntaAleatoria, 1);
+    copiaDeRespostas.splice(perguntaAleatoria, 1);
   }
 }
 
 function IniciarProva() {
-  let iniciar = prompt(
-    "Deseja Iniciar a prova?(S/N):"
-  );
+  let iniciar = prompt("Deseja Iniciar a prova?(S/N):");
 
   if (iniciar.toUpperCase() === 'S') {
-    perguntasErespostas()
+    perguntasErespostas();
     console.log(`Sua nota foi ${notaFinal} de ${perguntas.length}`);
-    
-  }else{
-    iniciar = prompt('')
+  } else {
+    iniciar = prompt('');
   }
 }
 
 IniciarProva();
-
