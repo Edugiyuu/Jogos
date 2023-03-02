@@ -19,8 +19,8 @@ function perguntasErespostas() {
   for (let i = 0; i < perguntas.length; i++) {
     const perguntaAleatoria = Math.floor(Math.random() * copiaDePerguntas.length);
 
-    console.log(perguntaAleatoria);
     console.log(copiaDePerguntas.length);
+    console.log(perguntaAleatoria);
 
     console.log(copiaDePerguntas[perguntaAleatoria]);
     console.log(copiaDeOpcoes[perguntaAleatoria]);
