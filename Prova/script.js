@@ -17,7 +17,7 @@ function perguntasErespostas() {
   const copiaDeRespostas = respostas.slice(); 
 
   for (let i = 0; i < perguntas.length; i++) {
-    const perguntaAleatoria = Math.floor(Math.random() * copiaDePerguntas.length);
+    const perguntaAleatoria = Math.floor(Math.random() * perguntas.length);
 
     console.log(copiaDePerguntas.length);
     console.log(perguntaAleatoria);
@@ -30,7 +30,7 @@ function perguntasErespostas() {
       notaFinal += 1;
     }
 
-    copiaDePerguntas.splice(perguntaAleatoria, 1);
+    copiaDePerguntas.splice(perguntaAleatoria,1); 
     copiaDeOpcoes.splice(perguntaAleatoria, 1);
     copiaDeRespostas.splice(perguntaAleatoria, 1);
   }
