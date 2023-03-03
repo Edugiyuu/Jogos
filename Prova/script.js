@@ -10,6 +10,9 @@ var opcoes = [
 var respostas = ["c", "b", "a"];
 
 let notaFinal = 0;
+let tentativas = 0;
+
+
 
 function perguntasErespostas() {
   const copiaDePerguntas = perguntas.slice();
@@ -17,13 +20,13 @@ function perguntasErespostas() {
   const copiaDeRespostas = respostas.slice(); 
 
   for (let i = 0; i < perguntas.length; i++) {
-    const perguntaAleatoria = Math.floor(Math.random() * perguntas.length);
+    const perguntaAleatoria = Math.floor(Math.random() * copiaDeOpcoes.length);
 
     console.log(copiaDePerguntas.length);
     console.log(perguntaAleatoria);
 
-    console.log(copiaDePerguntas[perguntaAleatoria]);
-    console.log(copiaDeOpcoes[perguntaAleatoria]);
+    console.log('Pergunta Aleatoria:',copiaDePerguntas[perguntaAleatoria]);
+    console.log('Opçoes:',copiaDeOpcoes[perguntaAleatoria]);
     var suaResposta = prompt('Sua resposta: ');
 
     if (suaResposta == copiaDeRespostas[perguntaAleatoria]) {
@@ -36,15 +39,30 @@ function perguntasErespostas() {
   }
 }
 
+
 function IniciarProva() {
+
   let iniciar = prompt("Deseja Iniciar a prova?(S/N):");
 
-  if (iniciar.toUpperCase() === 'S') {
+  while (tentativas <= 3) {
+
+  if (iniciar.toUpperCase() === 'S' ) {
     perguntasErespostas();
     console.log(`Sua nota foi ${notaFinal} de ${perguntas.length}`);
-  } else {
-    iniciar = prompt('');
+    
+    if (tentativas < 3) {
+      let continuar = prompt(`Você tem mais ${3 - tentativas} tentativas. Deseja continuar? (S/N):`);
+      if (continuar.toUpperCase() === 'N') {
+        break;
+      }
+    }
   }
+  tentativas++;
+  
+}
+if (tentativas >= 3) {
+  return console.log("Você excedeu o número máximo de tentativas.");
+}
 }
 
 IniciarProva();
