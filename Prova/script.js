@@ -12,6 +12,7 @@ var respostas = ["c", "b", "a","c"];
 
 let notaFinal = 0;
 let tentativas = 0;
+let notaMaior = 0;
 
 
 
@@ -51,6 +52,9 @@ function IniciarProva() {
     perguntasErespostas();
     console.log(`Sua nota foi ${notaFinal} de ${perguntas.length}`);
     console.log(`Porcentagem: ${Math.floor((notaFinal / perguntas.length) * 100)}%`);
+    if (notaFinal > notaMaior) {
+      notaMaior = notaFinal
+}
     if (iniciar.toUpperCase() === 'N' ) {
       break;
     }
@@ -62,12 +66,14 @@ function IniciarProva() {
         break;
       }
     }
+  }else{
+    break;
   }
   tentativas++;
-  
 }
 if (tentativas >= 3) {
-  return console.log("Você excedeu o número máximo de tentativas.");
+  console.log("Você excedeu o número máximo de tentativas.");
+  console.log(`Sua pontuação maxima foi de ${notaMaior}`);
 }
 }
 
