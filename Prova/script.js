@@ -24,8 +24,6 @@ function perguntasErespostas() {
   for (let i = 0; i < perguntas.length; i++) {
     const perguntaAleatoria = Math.floor(Math.random() * copiaDeOpcoes.length);
 
-    console.log(copiaDePerguntas.length);
-    console.log(perguntaAleatoria);
 
     console.log('Pergunta Aleatoria:',copiaDePerguntas[perguntaAleatoria]);
     console.log('Opçoes:',copiaDeOpcoes[perguntaAleatoria]);
@@ -52,6 +50,9 @@ function IniciarProva() {
     perguntasErespostas();
     console.log(`Sua nota foi ${notaFinal} de ${perguntas.length}`);
     console.log(`Porcentagem: ${Math.floor((notaFinal / perguntas.length) * 100)}%`);
+    
+    console.log(notaFinal);
+    console.log(notaMaior);
     if (notaFinal > notaMaior) {
       notaMaior = notaFinal
 }
@@ -63,6 +64,8 @@ function IniciarProva() {
       let continuar = prompt(`Você tem mais ${ 3 - tentativas} tentativas. Deseja continuar? (S/N):`);
       notaFinal = 0
       if (continuar.toUpperCase() === 'N') {
+        console.log(`Sua pontuação maxima foi de ${notaMaior} de ${perguntas.length}`);
+        console.log(`A Maior Porcentagem: ${Math.floor((notaMaior / perguntas.length) * 100)}%`);
         break;
       }
     }
@@ -73,7 +76,8 @@ function IniciarProva() {
 }
 if (tentativas >= 3) {
   console.log("Você excedeu o número máximo de tentativas.");
-  console.log(`Sua pontuação maxima foi de ${notaMaior}`);
+  console.log(`Sua pontuação maxima foi de ${notaMaior} de ${perguntas.length}`);
+  console.log(`A Maior Porcentagem: ${Math.floor((notaMaior / perguntas.length) * 100)}%`);
 }
 }
 
