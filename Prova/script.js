@@ -61,6 +61,7 @@ function IniciarProva() {
     }
     
     if (tentativas < 3) {
+      notaFinal = 0
       let continuar = prompt(`Você tem mais ${ 3 - tentativas} tentativas. Deseja continuar? (S/N):`);
       if (continuar.toUpperCase() === 'N') {
         console.log(`Sua pontuação maxima foi de ${notaMaior} de ${perguntas.length}`);
