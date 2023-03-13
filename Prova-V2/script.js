@@ -46,24 +46,29 @@ function IniciarProva(exemploPerguntas) {
         
         console.log(`Sua nota foi ${notaAtual} de ${perguntas.length}`);
         console.log(`Porcentagem: ${Math.floor((notaAtual / perguntas.length) * 100)}%`);
+        
         if (notaAtual > notaMaior) {
           notaMaior = notaAtual
         }
+        if (tentativas < 3) {
+          notaAtual = 0
+          let continuar = prompt(`Você tem mais ${ 3 - tentativas} tentativas. Deseja continuar? (S/N):`);
+          if (continuar.toUpperCase() === 'N'){
+            notaMaxima()
+            break;
+          }
+        }
     }
-    if (tentativas < 3) {
-      notaAtual = 0
-      let continuar = prompt(`Você tem mais ${ 3 - tentativas} tentativas. Deseja continuar? (S/N):`);
-      if (continuar.toUpperCase() === 'S' ){
-
-      }
-    }
+    
     tentativas++
   }
   if (tentativas >= 3) {
     console.log("Você excedeu o número máximo de tentativas.");
+    notaMaxima()
+  }
+  function notaMaxima() {
     console.log(`Sua pontuação maxima foi de ${notaMaior} de ${perguntas.length}`);
     console.log(`A Maior Porcentagem: ${Math.floor((notaMaior / perguntas.length) * 100)}%`);
   }
-
   }
   IniciarProva(perguntas);
