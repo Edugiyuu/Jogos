@@ -20,13 +20,15 @@ var perguntas = [
 
 
   function mostrarPerguntas(exemploPerguntas,notaAtual){
+
     for (let i = 0; i < perguntas.length;i++){
+      const perguntaAleatoria = Math.floor(Math.random() * perguntas.length);
         
-        console.log(exemploPerguntas[i].pergunta);
-        console.log(exemploPerguntas[i].opcoes.join(', '));
+        console.log(exemploPerguntas[perguntaAleatoria].pergunta);
+        console.log(exemploPerguntas[perguntaAleatoria].opcoes.join(', '));
         let suaResposta = prompt('Sua resposta: ');
 
-        if (suaResposta == exemploPerguntas[i].resposta) {
+        if (suaResposta == exemploPerguntas[perguntaAleatoria].resposta) {
             notaAtual++
         }
     }
@@ -46,7 +48,7 @@ function IniciarProva(exemploPerguntas) {
         
         console.log(`Sua nota foi ${notaAtual} de ${perguntas.length}`);
         console.log(`Porcentagem: ${Math.floor((notaAtual / perguntas.length) * 100)}%`);
-        
+
         if (notaAtual > notaMaior) {
           notaMaior = notaAtual
         }
@@ -58,7 +60,7 @@ function IniciarProva(exemploPerguntas) {
             break;
           }
         }
-    }
+      }
     
     tentativas++
   }
