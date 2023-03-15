@@ -27,8 +27,19 @@ var perguntas = [
     for (let i = 0; i < perguntas.length;i++){
       const perguntaAleatoria = Math.floor(Math.random() * copiaDeTudo.length);
         
+      const arrayDeLetras = ["A.", "B.", "C.", "D."];
+
+
+      const perguntasComLetras = perguntas.map((pergunta) => {
+      const opcoesComLetras = pergunta.opcoes.map((opcao, index) => `${arrayDeLetras[index]} ${opcao}`);
+      return {
+        opcoes: opcoesComLetras,
+      }
+    });
         console.log(copiaDeTudo[perguntaAleatoria].pergunta);
-        console.log(copiaDeTudo[perguntaAleatoria].opcoes.join(', '));
+        console.log(perguntasComLetras[perguntaAleatoria]);
+
+        
         let suaResposta = prompt('Sua resposta: ');
 
         if (suaResposta == copiaDeTudo[perguntaAleatoria].resposta) {
