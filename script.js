@@ -19,14 +19,14 @@ var perguntas = [
 const arrayDeLetras = ["A.", "B.", "C.", "D."];
 
 
-const perguntasComLetras = perguntas.map((pergunta) => {
+const selecionarPerguntas = perguntas.map((pergunta) => {
   const opcoesComLetras = pergunta.opcoes.map((opcao, index) => `${arrayDeLetras[index]} ${opcao}`);
   return {
-    opcoes: opcoesComLetras,
+    opcoes: opcoesComLetras
   }
 });
 
-console.log(perguntasComLetras);
+console.log(selecionarPerguntas[1].opcoes.toString().replaceAll(',','\n'));
 
 
 const perguntasArray = ["pergunta 1", "pergunta 2", "pergunta 3", "pergunta 4"];

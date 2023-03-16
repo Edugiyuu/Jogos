@@ -27,24 +27,26 @@ var perguntas = [
     for (let i = 0; i < perguntas.length;i++){
       const perguntaAleatoria = Math.floor(Math.random() * copiaDeTudo.length);
         
-      const arrayDeLetras = ["A.", "B.", "C.", "D."];
+      const arrayDeLetras = ["A", "B", "C"];
 
-
-      const perguntasComLetras = perguntas.map((pergunta) => {
-      const opcoesComLetras = pergunta.opcoes.map((opcao, index) => `${arrayDeLetras[index]} ${opcao}`);
-      return {
-        opcoes: opcoesComLetras,
-      }
-    });
         console.log(copiaDeTudo[perguntaAleatoria].pergunta);
-        console.log(perguntasComLetras[perguntaAleatoria]);
-
+        //console.log(selecionarPerguntas[perguntaAleatoria].opcoes.toString().replaceAll(',','\n'));
+        console.log(copiaDeTudo[perguntaAleatoria].opcoes.map((opcao, index) => `${arrayDeLetras[index]} - ${opcao}`).toString().replaceAll(',','\n'));
         
         let suaResposta = prompt('Sua resposta: ');
+        suaResposta = suaResposta.charAt(0)
+        var indexDaResposta = arrayDeLetras.indexOf(suaResposta.toUpperCase())
+        if (indexDaResposta == -1) {
+          console.log('Opção invalida');
+          break;
+        }
+        console.log(indexDaResposta);
+        
 
-        if (suaResposta == copiaDeTudo[perguntaAleatoria].resposta) {
+        if ( copiaDeTudo[perguntaAleatoria].opcoes[indexDaResposta] == copiaDeTudo[perguntaAleatoria].resposta) {
             notaAtual++
-        }else{
+        }
+        else{
           respostasErradas.push({
             pergunta: copiaDeTudo[perguntaAleatoria].pergunta,
             resposta: suaResposta
