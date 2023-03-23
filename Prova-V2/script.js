@@ -58,53 +58,55 @@ var perguntas = [
     return notaAtual
 }
 
-
-function IniciarProva(exemploPerguntas) {
-    let notaAtual = 0
-    let tentativas = 0
-    let notaMaior = 0
-    let respostasErradas = []
-    let iniciar = prompt("Deseja Iniciar a prova?(S/N):");
-
-    while (tentativas <= 3) {
-    if (iniciar.toUpperCase() === 'S' ) {
-        notaAtual = mostrarPerguntas(exemploPerguntas,notaAtual,respostasErradas)
-        
-        console.log(`Sua nota foi ${notaAtual} de ${perguntas.length}`);
-        console.log(`Porcentagem: ${Math.floor((notaAtual / perguntas.length) * 100)}%`);
-
-        let verRespostasErradas = prompt('Você quer ver suas respostas erradas? (S/N): ');
-        if (verRespostasErradas.toUpperCase() === 'S') {
-          respostasErradas.forEach(questao => {
-            console.log(`Questão: ${questao.pergunta}\nSua resposta: ${questao.resposta}`);
-          });
-        }
-
-        if (notaAtual > notaMaior) {
-          notaMaior = notaAtual
-        }
-        if (tentativas < 3) {
-          notaAtual = 0
-
-
-          let continuar = prompt(`Você tem mais ${ 3 - tentativas} tentativas. Deseja continuar? (S/N):`);
-          if (continuar.toUpperCase() === 'N'){
-            notaMaxima()
-            break;
-          }
-        }
-      }
+function validaTentativas(exemploPerguntas,iniciar,tentativas = 0,notaAtual = 0,respostasErradas = [],notaMaior = 0) {
+  if (tentativas <= 3) {
+  if (iniciar.toUpperCase() === 'S' ) {
+    notaAtual = mostrarPerguntas(exemploPerguntas,notaAtual,respostasErradas)
     
-    tentativas++
+    console.log(`Sua nota foi ${notaAtual} de ${perguntas.length}`);
+    console.log(`Porcentagem: ${Math.floor((notaAtual / perguntas.length) * 100)}%`);
+
+    let verRespostasErradas = prompt('Você quer ver suas respostas erradas? (S/N): ');
+    if (verRespostasErradas.toUpperCase() === 'S') {
+      respostasErradas.forEach(questao => {
+        console.log(`Questão: ${questao.pergunta}\nSua resposta: ${questao.resposta}`);
+        
+      });
+    }
+
+    if (notaAtual > notaMaior) {
+      notaMaior = notaAtual
+    }
+    if (tentativas < 3) {
+      notaAtual = 0
+
+
+      let continuar = prompt(`Você tem mais ${ 3 - tentativas} tentativas. Deseja continuar? (S/N):`);
+      if (continuar.toUpperCase() === 'N'){
+        notaMaxima()
+      }
+    }
+  }
+  tentativas++
+  validaTentativas(exemploPerguntas,iniciar,tentativas,notaAtual,respostasErradas,notaMaior)
   }
   if (tentativas >= 3) {
     console.log("Você excedeu o número máximo de tentativas.");
-
     notaMaxima()
   }
   function notaMaxima() {
     console.log(`Sua pontuação maxima foi de ${notaMaior} de ${perguntas.length}`);
     console.log(`A Maior Porcentagem: ${Math.floor((notaMaior / perguntas.length) * 100)}%`);
   }
+  
+}
+
+
+function IniciarProva(exemploPerguntas) {
+    
+    let iniciar = prompt("Deseja Iniciar a prova?(S/N):");
+
+    validaTentativas(exemploPerguntas,iniciar)
+
   }
   IniciarProva(perguntas);
