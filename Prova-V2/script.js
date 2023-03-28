@@ -70,6 +70,7 @@ function validaTentativas(exemploPerguntas,iniciar,tentativas = 0,notaAtual = 0,
     if (verRespostasErradas.toUpperCase() === 'S') {
       respostasErradas.forEach(questao => {
         console.log(`Questão: ${questao.pergunta}\nSua resposta: ${questao.resposta}`);
+        respostasErradas =[]
         
       });
     }
@@ -84,6 +85,7 @@ function validaTentativas(exemploPerguntas,iniciar,tentativas = 0,notaAtual = 0,
       let continuar = prompt(`Você tem mais ${ 3 - tentativas} tentativas. Deseja continuar? (S/N):`);
       if (continuar.toUpperCase() === 'N'){
         notaMaxima()
+        return
       }
     }
   }
@@ -91,12 +93,12 @@ function validaTentativas(exemploPerguntas,iniciar,tentativas = 0,notaAtual = 0,
   validaTentativas(exemploPerguntas,iniciar,tentativas,notaAtual,respostasErradas,notaMaior)
   }
   if (tentativas >= 3) {
-    console.log("Você excedeu o número máximo de tentativas.");
-    notaMaxima()
+    return console.log("Você excedeu o número máximo de tentativas.");
   }
   function notaMaxima() {
     console.log(`Sua pontuação maxima foi de ${notaMaior} de ${perguntas.length}`);
     console.log(`A Maior Porcentagem: ${Math.floor((notaMaior / perguntas.length) * 100)}%`);
+    return
   }
   
 }
