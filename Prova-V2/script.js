@@ -71,6 +71,9 @@ function validaTentativas(exemploPerguntas,iniciar,tentativas = 0,notaAtual = 0,
       respostasErradas.forEach(questao => {
         console.log(`Questão: ${questao.pergunta}\nSua resposta: ${questao.resposta}`);
         respostasErradas =[]
+        if (tentativas >= 3) {
+        console.log("Você excedeu o número máximo de tentativas.");
+      }
         
       });
     }
@@ -80,7 +83,6 @@ function validaTentativas(exemploPerguntas,iniciar,tentativas = 0,notaAtual = 0,
     }
     if (tentativas < 3) {
       notaAtual = 0
-
 
       let continuar = prompt(`Você tem mais ${ 3 - tentativas} tentativas. Deseja continuar? (S/N):`);
       if (continuar.toUpperCase() === 'N'){
@@ -92,16 +94,14 @@ function validaTentativas(exemploPerguntas,iniciar,tentativas = 0,notaAtual = 0,
   tentativas++
   validaTentativas(exemploPerguntas,iniciar,tentativas,notaAtual,respostasErradas,notaMaior)
   }
-  if (tentativas >= 3) {
-    return console.log("Você excedeu o número máximo de tentativas.");
-  }
   function notaMaxima() {
     console.log(`Sua pontuação maxima foi de ${notaMaior} de ${perguntas.length}`);
     console.log(`A Maior Porcentagem: ${Math.floor((notaMaior / perguntas.length) * 100)}%`);
-    return
   }
   
+  
 }
+
 
 
 function IniciarProva(exemploPerguntas) {
