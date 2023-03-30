@@ -70,7 +70,7 @@ function validaTentativas(exemploPerguntas,iniciar,tentativas = 0,notaAtual = 0,
     if (verRespostasErradas.toUpperCase() === 'S') {
       respostasErradas.forEach(questao => {
         console.log(`Questão: ${questao.pergunta}\nSua resposta: ${questao.resposta}`);
-        respostasErradas =[]
+        respostasErradas = []
         if (tentativas >= 3) {
         console.log("Você excedeu o número máximo de tentativas.");
       }
