@@ -7,7 +7,7 @@ cfonts.say('Provinha', {
 	colors: ['system'],         // define all colors
 	background: 'transparent',  // define the background color, you can also use `backgroundColor` here as key
 	letterSpacing: 1,           // define letter spacing
-	lineHeight: 1,              // define the line height
+	lineHeight: 0,              // define the line height
 	space: true,                // define if the output text should have empty lines on top and on the bottom
 	maxLength: '0',             // define how many character can be on one line
 	gradient: false,            // define your two gradient colors
@@ -79,6 +79,7 @@ function validaTentativas(exemploPerguntas,iniciar,tentativas = 0,notaAtual = 0,
   if (iniciar.toUpperCase() === 'S' ) {
     notaAtual = mostrarPerguntas(exemploPerguntas,notaAtual,respostasErradas)
     
+
     console.log(`Sua nota foi ${notaAtual} de ${perguntas.length}`);
     console.log(`Porcentagem: ${Math.floor((notaAtual / perguntas.length) * 100)}%`);
 
@@ -87,6 +88,7 @@ function validaTentativas(exemploPerguntas,iniciar,tentativas = 0,notaAtual = 0,
       respostasErradas.forEach(questao => {
         console.log(`Questão: ${questao.pergunta}\nSua resposta: ${questao.resposta}`);
         respostasErradas = []
+        
         if (tentativas >= 3) {
         console.log("Você excedeu o número máximo de tentativas.");
       }
@@ -111,6 +113,7 @@ function validaTentativas(exemploPerguntas,iniciar,tentativas = 0,notaAtual = 0,
   validaTentativas(exemploPerguntas,iniciar,tentativas,notaAtual,respostasErradas,notaMaior)
   }
   function notaMaxima() {
+    
     console.log(`Sua pontuação maxima foi de ${notaMaior} de ${perguntas.length}`);
     console.log(`A Maior Porcentagem: ${Math.floor((notaMaior / perguntas.length) * 100)}%`);
   }
