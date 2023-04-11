@@ -1,6 +1,18 @@
 const prompt = require("prompt-sync")({ sigint: true });
 
-let finalizado = false
+setTimeout(function (){
+        let resposta = prompt(console.log('Digite S para finalizar a prova'))
+        if (resposta == 's') {
+        console.log('Prova feita');
+        }else{
+        console.log('Tempo limite');
+}
+},100)
+
+setTimeout(function (){
+        console.log('Tempo limite') 
+},6000)
+/* let finalizado = false
 
 setTimeout(function (){
     if (!finalizado) {
@@ -15,7 +27,7 @@ if (resposta == 's') {
     console.log('Prova feita');
 }else{
     console.log('Tempo limite');
-}
+} */
 
 /* const timeOut = 10000
 const tempoLimite = () => console.log('Tempo limite');
