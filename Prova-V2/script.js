@@ -1,5 +1,11 @@
 const prompt = require("prompt-sync")({ sigint: true });
 const cfonts = require('cfonts');
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
 cfonts.say('Provinha', {
 	font: 'block',              // define the font face
@@ -50,6 +56,7 @@ var perguntas = [
         console.log(copiaDeTudo[perguntaAleatoria].opcoes.map((opcao, index) => `${arrayDeLetras[index]} - ${opcao}`).toString().replaceAll(',','\n'));
         
         let suaResposta = prompt('Sua resposta: ');
+
         suaResposta = suaResposta.charAt(0)
         var indexDaResposta = arrayDeLetras.indexOf(suaResposta.toUpperCase())
         if (indexDaResposta == -1) {
@@ -78,7 +85,7 @@ function validaTentativas(exemploPerguntas,iniciar,tentativas = 0,notaAtual = 0,
   if (tentativas <= 3) {
   if (iniciar.toUpperCase() === 'S' ) {
     notaAtual = mostrarPerguntas(exemploPerguntas,notaAtual,respostasErradas)
-    
+
 
     console.log(`Sua nota foi ${notaAtual} de ${perguntas.length}`);
     console.log(`Porcentagem: ${Math.floor((notaAtual / perguntas.length) * 100)}%`);
@@ -126,6 +133,8 @@ function validaTentativas(exemploPerguntas,iniciar,tentativas = 0,notaAtual = 0,
 function IniciarProva(exemploPerguntas) {
     
     let iniciar = prompt("Deseja Iniciar a prova?(S/N):");
+    
+
 
     validaTentativas(exemploPerguntas,iniciar)
 
