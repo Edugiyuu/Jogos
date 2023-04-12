@@ -4,14 +4,24 @@ setTimeout(function (){
         let resposta = prompt(console.log('Digite S para finalizar a prova'))
         if (resposta == 's') {
         console.log('Prova feita');
-        }else{
-        console.log('Tempo limite');
-}
+        }
 },100)
 
 setTimeout(function (){
         console.log('Tempo limite') 
 },6000)
+//---------------------------------
+/* setTimeout(function (){
+    let resposta = prompt(
+        setTimeout(function (){
+            console.log('Tempo limite') 
+            },5000),
+        console.log('Digite S para finalizar a prova'))
+    if (resposta == 's') {
+    console.log('Prova feita');
+    }
+},100) */
+//----------------------------------
 /* let finalizado = false
 
 setTimeout(function (){
