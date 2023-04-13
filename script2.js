@@ -28,6 +28,22 @@ rl.question('Digite S para finalizar a prova', () => {
   clearTimeout(timer)
 });
 
+//---------------------------------------------------
+/* var readlineSync = require('readline-sync');
+
+const timeOut = 5000
+const finished = () => console.log('\nTempo esgotado');
+
+let timer = setTimeout(finished, timeOut);
+
+
+  
+var digiteS = readlineSync.question('Digite S para finalizar a prova')
+     
+if (digiteS == 's') {
+    console.log('feito');
+    
+  }  */
 //---------------------------------
 /* setTimeout(function (){
     let resposta = prompt(
