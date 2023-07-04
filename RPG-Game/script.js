@@ -43,9 +43,9 @@ console.log(`Você encontrou um ${umDosInimigos} Ele tem ${vidaDoInimigo} de Vid
 
 function mostrarOpcoes() {
     if (nivelDoPersonagem == 1) {
-        return prompt(`${colors.green("Digite 1 para Atacar, 2 Para Defender 3 Para descansar: ")}`)
+        return prompt(`${colors.green("Digite 1 para Atacar, 2 Para Defender ou 3 Para descansar: ")}`)
     }else if (nivelDoPersonagem == 2) {
-        return prompt(`${colors.green("Digite 1 para Atacar, 2 Para Defender 3 Para descansar: ")}`)
+        return prompt(`${colors.green("Digite 1 para Atacar, 2 Para Defender ou 3 Para descansar: ")}`)
     }
   }
   
@@ -74,7 +74,7 @@ function Combate() {
     
     if (staminaDoPersonagem <= 0) {
         cansado = true
-        console.log(`${colors.yellow('Você está muito cansado, descanse um pouco')}`);
+        console.log(`${colors.yellow('\nVocê está muito cansado para atacar.. (Recupere sua Stamina!)\n')}`);
        }else if(staminaDoPersonagem > 0){
         cansado = false
        }
@@ -88,15 +88,21 @@ function Combate() {
 
             console.log(`\nVocê causou ${armaInicial}  ${ataqueDoPersonagem} de Dano ao ${umDosInimigos}`)
             console.log(`${umDosInimigos} causou 🗡️  ${ataqueDoInimigo} de Dano ao ${name}`)
+
+            console.log(`\nVida do ${umDosInimigos}: ❤️  ${colors.red(vidaDoInimigo)}`);
+            console.log(`Vida do(a) ${name} ❤️  ${colors.red(vidaDoPersonagem)}`);
+            
         }else{
      
             vidaDoPersonagem -= ataqueDoInimigo
             console.log(`${umDosInimigos} causou 🗡️  ${ataqueDoInimigo} de Dano ao ${name}`)
+
+            console.log(`\nVida do ${umDosInimigos}: ❤️  ${vidaDoInimigo}`);
+            console.log(`Vida do(a) ${name} ❤️  ${colors.red(vidaDoPersonagem)}`);
+            
         }
 
-        console.log(`\nVida do ${umDosInimigos}: ❤️  ${colors.red(vidaDoInimigo)}`);
-        console.log(`Vida do(a) ${name} ❤️  ${colors.red(vidaDoPersonagem)}`);
-        console.log(`Stamina do(a) ${name} ⚡  ${colors.blue(staminaDoPersonagem)}`);
+        console.log(`Stamina do(a) ${name} ⚡  ${colors.blue(staminaDoPersonagem)}\n`);
 
     //------------------------------------------------------------------------
 
@@ -109,11 +115,11 @@ function Combate() {
             console.log(`${umDosInimigos} Defendeu 🛡️ seu ataque`)
 
         }else{
-            console.log(`${umDosInimigos} Defendeu 🛡️ seu ataque`)
+            console.log(`${umDosInimigos} nem precisou defender seu ataque, já que o ${name} está muito cansado`)
         }
         console.log(`\nVida do ${umDosInimigos}: ❤️  ${colors.yellow(vidaDoInimigo)}`);
         console.log(`Vida do(a) ${name} ❤️  ${vidaDoPersonagem}`);
-        console.log(`Stamina do(a) ${name} ⚡  ${colors.blue(staminaDoPersonagem)}`);
+        console.log(`Stamina do(a) ${name} ⚡  ${colors.blue(staminaDoPersonagem)}\n`);
         
     //---------------------------------------------------------------
 
@@ -127,7 +133,7 @@ function Combate() {
 
         vidaDoPersonagem -= ataqueDoInimigo / 2
         console.log(`\nVida do ${umDosInimigos}: ❤️  ${vidaDoInimigo}`);
-        console.log(`Vida do(a) ${name} ❤️  ${colors.yellow(vidaDoPersonagem)}`);
+        console.log(`Vida do(a) ${name} ❤️  ${colors.yellow(vidaDoPersonagem)}\n`);
         
     }
     //--------------------------------------------------------------------------
@@ -148,7 +154,7 @@ function Combate() {
 
         console.log(colors.red(`Você ficou com a guarda baixa!`));
         vidaDoPersonagem -= ataqueDoInimigo * 2
-        console.log(`${umDosInimigos} causou 🗡️  ${ataqueDoInimigo * 2} de Dano ao ${name}`)
+        console.log(`${umDosInimigos} causou 🗡️  ${ataqueDoInimigo * 2} de Dano ao ${name} ${colors.rainbow('(O dobro do dano!)')}`)
 
         console.log(`\nVida do ${umDosInimigos}: ❤️  ${vidaDoInimigo}`);
         console.log(`Vida do(a) ${name} ❤️  ${colors.red(vidaDoPersonagem)}`);
