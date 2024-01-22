@@ -5,6 +5,10 @@
 }
 
 body{
+  
+}
+
+body{
    width: fit-content;
    margin: auto;
    padding-top: 52px;
@@ -97,7 +101,6 @@ padding-right: 30px;
 border: 5px solid;
 border-color: rgb(21, 255, 0);
 }
-
 
 #resutadoFinalPvb, #ColoqueNomePlayer1, #ColoqueNomePlayer2{
 font-family: 'Comicsans', sans-serif;

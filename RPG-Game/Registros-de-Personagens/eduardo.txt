@@ -1,6 +1,6 @@
-Nome: edu 
- Morto por: Fantasma 
+Nome: eduardo 
+ Morto por: Porco 
  Nivel: 1 
- Arma Usada: 👊 
+ Arma Usada: 🔪 
  Total de ataques esquivados: 0 
  Status: Morto

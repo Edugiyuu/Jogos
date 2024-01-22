@@ -24,6 +24,7 @@ var nivelDoPersonagem = 1
 var vidaDoPersonagem = 100
 var ataqueDoPersonagem = 10
 var staminaDoPersonagem = 5
+var contadorDeEsquivas = 0
 
 
 if(nivelDoPersonagem == 1){
@@ -32,7 +33,7 @@ if(nivelDoPersonagem == 1){
 
 else if(nivelDoPersonagem == 2){
     vidaDoInimigo = Math.floor(Math.random() * 130) + 60
-    ataqueDoInimigo = Math.floor(Math.random() * 10) + 3
+    ataqueDoInimigo = Math.floor(Math.random() * 11) + 3
 }
 
 var nomeDosInimigos = ['Porco','Abelha', 'Esqueleto','Fantasma']
@@ -45,7 +46,7 @@ function mostrarOpcoes() {
     if (nivelDoPersonagem == 1) {
         return prompt(`${colors.green("Digite 1 para Atacar, 2 Para Defender ou 3 Para descansar: ")}`)
     }else if (nivelDoPersonagem == 2) {
-        return prompt(`${colors.green("Digite 1 para Atacar, 2 Para Defender ou 3 Para descansar: ")}`)
+        return prompt(`${colors.green("Digite 1 para Atacar, 2 Para Defender, 3 Para descansar ou 4 para Couter: ")}`)
     }
   }
   
@@ -53,28 +54,52 @@ function escolhaDeCombate(numero,nomes) {
     var opçoes = {
         1: `${nomes} usou Ataque 🗡️`,
         2: `${nomes} usou Defesa 🛡️`,
-        3: `${nomes} está Descansando 💨`,
-        //3: `${nomes} usou Counter 💨`,
+        3: `${nomes} está Descansando 🏕️`,
+        //4: `${nomes} usou Counter 💨`,
     }
 
     if (nivelDoPersonagem == 2) {
         opçoes = {
             1: `${nomes} usou Ataque 🗡️`,
             2: `${nomes} usou Defesa 🛡️`,
-            3: `${nomes} está Descansando 💨`,
+            3: `${nomes} está Descansando 🏕️`,
         }
     }
     
     console.log(opçoes[numero]);
 }
+
+    function chanceDeDesvio() {
+
+        var esquivaDoPersonagem = Math.floor(Math.random() * 100)
+
+        if (esquivaDoPersonagem >= 75) {
+            contadorDeEsquivas += 1
+            console.log(contadorDeEsquivas);
+            console.log(`\nVocê ${colors.bold('desviou 💨')} por pouco do ataque do ${umDosInimigos}`)
+            console.log(`\n${colors.red('-1')} De ${colors.blue("Stamina")} por desviar Do ataque`)
+
+            console.log(`\nVida do ${umDosInimigos}: ❤️  ${colors.red(vidaDoInimigo)}`);
+            console.log(`Vida do(a) ${name} ❤️  ${colors.bold(vidaDoPersonagem)}`);
+            staminaDoPersonagem--
+        }else{
+            vidaDoPersonagem -= ataqueDoInimigo
+            console.log(`${umDosInimigos} causou 🗡️  ${ataqueDoInimigo} de Dano ao ${name}`)
+            console.log(`\nVida do ${umDosInimigos}: ❤️  ${colors.red(vidaDoInimigo)}`);
+            console.log(`Vida do(a) ${name} ❤️  ${colors.red(vidaDoPersonagem)}`);
+        }
+    }
+
     var cansado = false
+
 function Combate() {
+    
     let escolhaDoInimigo = Math.floor(Math.random() * 2) + 1
     escolhaDeCombate(escolhaDoInimigo,umDosInimigos)
     
     if (staminaDoPersonagem <= 0) {
         cansado = true
-        console.log(`${colors.yellow('\nVocê está muito cansado para atacar.. (Recupere sua Stamina!)\n')}`);
+        console.log(`${colors.yellow('\n ❗ Você está muito cansado para atacar.. (Recupere sua Stamina!)❗\n')}`);
        }else if(staminaDoPersonagem > 0){
         cansado = false
        }
@@ -82,16 +107,14 @@ function Combate() {
     if (escolhaDoJogador == 1 && escolhaDoInimigo == 1) {
         
         if (cansado == false) {
-            vidaDoInimigo -= ataqueDoPersonagem 
-            vidaDoPersonagem -= ataqueDoInimigo
-            staminaDoPersonagem--
 
             console.log(`\nVocê causou ${armaInicial}  ${ataqueDoPersonagem} de Dano ao ${umDosInimigos}`)
-            console.log(`${umDosInimigos} causou 🗡️  ${ataqueDoInimigo} de Dano ao ${name}`)
+            vidaDoInimigo -= ataqueDoPersonagem
 
-            console.log(`\nVida do ${umDosInimigos}: ❤️  ${colors.red(vidaDoInimigo)}`);
-            console.log(`Vida do(a) ${name} ❤️  ${colors.red(vidaDoPersonagem)}`);
-            
+            chanceDeDesvio()
+
+            staminaDoPersonagem--
+
         }else{
      
             vidaDoPersonagem -= ataqueDoInimigo
@@ -115,7 +138,7 @@ function Combate() {
             console.log(`${umDosInimigos} Defendeu 🛡️ seu ataque`)
 
         }else{
-            console.log(`${umDosInimigos} nem precisou defender seu ataque, já que o ${name} está muito cansado`)
+            console.log(`${umDosInimigos} nem precisou defender seu ataque, já que o ${name} está muito cansado para atacar`)
         }
         console.log(`\nVida do ${umDosInimigos}: ❤️  ${colors.yellow(vidaDoInimigo)}`);
         console.log(`Vida do(a) ${name} ❤️  ${vidaDoPersonagem}`);
@@ -166,7 +189,7 @@ function Combate() {
         staminaDoPersonagem += 2
         console.log(`\nStamina ${colors.blue('+2')} do(a) ${name} recuperada por descansar⚡ Total de Stamina: ${colors.blue(staminaDoPersonagem)} ⚡`);
 
-        console.log(colors.red(`Você ficou com a guarda baixa!`));
+        console.log(colors.red(`Você ficou com a guarda baixa enquanto descansa!`));
 
         console.log(`\nVida do ${umDosInimigos}: ❤️  ${vidaDoInimigo}`);
         console.log(`Vida do(a) ${name} ❤️  ${vidaDoPersonagem}`);
@@ -177,14 +200,13 @@ function Combate() {
         console.log('Você matou seu Inimigo ☠️');
         nivelDoPersonagem += 1
         console.log(`Você agora é nivel ${nivelDoPersonagem} ⏫`);
-
+        
     }
-    
 }
 
-var mensagemFinal = `Nome: ${name} \n Morto por: ${umDosInimigos} \n Nivel: ${nivelDoPersonagem} \n Arma Usada: ${armaInicial} \n Status: Morto`
+var mensagemFinal = `Nome: ${name} \n Morto por: ${umDosInimigos} \n Nivel: ${nivelDoPersonagem} \n Arma Usada: ${armaInicial} \n Total de ataques esquivados: ${contadorDeEsquivas} \n Status: Morto`
 
-while (vidaDoInimigo >= 0 ) {
+while (vidaDoInimigo > 0 ) {
     escolhaDoJogador = mostrarOpcoes();
     escolhaDeCombate(escolhaDoJogador,name);
     Combate();
