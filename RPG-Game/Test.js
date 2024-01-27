@@ -1,5 +1,5 @@
-/*  const array = [1,2,3,4,7,8,15,20,69,70,76,80,555,799,1000]
-
+/*   const array = [1,2,3,4,7,8,15,20,69,70,76,80,555,799,1000]
+   console.time('BuscaLinear'); 
 function ProcurarNumeroLinear(procurar) {
     for (let i = 0; i < array.length; i++) {
         if (procurar === array[i]) {
@@ -8,30 +8,20 @@ function ProcurarNumeroLinear(procurar) {
         }
     }
 }
-console.log(ProcurarNumeroLinear(1000));
+ const inicio = performance.now();
+ProcurarNumeroLinear(69);
+const fim = performance.now();
+console.log(`A operação Linear levou ${fim - inicio} milissegundos`); 
 
-function ProcurarNumeroLinear2(numeroProcurado, array) {
-    let posição = 0;
-    while (posição < array.length) {
-        if (numeroProcurado === array[posição]) {
-            console.log(`Posição ${posição}`);
-            return numeroProcurado;
-        }
-        posição++;
-    }
-    
-}
-
-console.log(ProcurarNumeroLinear2(80, array));
 
 [1,2,3,4,7,8,15,20,69,70,76,80,555,799,1000]
 
 function buscaBinaria(numeroProcurado, array) {
-    let inicio = 0;
-    let fim = array.length;
+    let inicio = 0;//8
+    let fim = array.length;//8
 
     while (inicio <= fim) {
-        let meio = Math.floor((inicio + fim) / 2);
+        let meio = Math.floor((inicio + fim) / 2);//8
 
         if (array[meio] === numeroProcurado) {
             console.log(`Posição ${meio}`);
@@ -42,11 +32,55 @@ function buscaBinaria(numeroProcurado, array) {
             fim = meio - 1;
         }
     }
-} 
-console.log(buscaBinaria(3, array));
- */
+} */
+var naoOrdenado = [5, 2, 8, 1, 7]
 
-const palavras = ['Sim','Não','Yes','No']
+function Ordenar() {
+   
+    for (let i = 0; i < naoOrdenado.length; i++) {
+        for (let j = 1 ; j < naoOrdenado.length; j++) {
+            var numeroMenor = 0
+            if (naoOrdenado[i] > naoOrdenado[j]) {
+                numeroMenor = naoOrdenado[j]
+                naoOrdenado[j] = naoOrdenado[i]
+                naoOrdenado[i] = numeroMenor
+                console.log(naoOrdenado);
+            }else if (naoOrdenado[i]) {
+                numeroMenor = naoOrdenado[i]
+            }
+            
+        }
+       /*  if (naoOrdenado[i] > naoOrdenado[i + 1]) {
+            numeroMenor = naoOrdenado[i + 1]
+            naoOrdenado[i + 1] = naoOrdenado[i]
+            naoOrdenado[i] = numeroMenor
+            console.log(naoOrdenado);
+
+        } */
+        
+    }
+}
+
+console.log(Ordenar());
+/* function sortfunction(a, b){
+    let res = a - b
+    console.log(res);
+    return res //faz com que o array seja ordenado numericamente e de ordem crescente.
+    
+  }
+  var ordenado = naoOrdenado.sort(sortfunction)
+  console.log(ordenado); */
+ /*  console.log(sortfunction(10, 8)); */
+
+/* const inicio2 = performance.now();
+buscaBinaria(69, array);
+const fim2 = performance.now();
+console.log(`A operação Binaria levou ${fim2 - inicio2} milissegundos`); */
+
+ //console.log(buscaBinaria(69, array)); 
+ 
+
+/* const palavras = ['Sim','Não','Yes','No']
 
 function ProcurarPalavra(procurar) {
     for (let i = 2; i < palavras.length; i++) {
@@ -56,7 +90,7 @@ function ProcurarPalavra(procurar) {
         }
     }
 }
-console.log(ProcurarPalavra('No'));
+console.log(ProcurarPalavra('No')); */
 
 /* const pokemonArray = [
     { id: 1, nome: "Bulbasaur" },
