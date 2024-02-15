@@ -33,7 +33,7 @@ function buscaBinaria(numeroProcurado, array) {
         }
     }
 } *///             1  2  8  5  7
-var naoOrdenado = [5, 2, 8, 1, 7]
+/* var naoOrdenado = [5, 2, 8, 1, 7]
 
  function Ordenar() {
    
@@ -56,10 +56,10 @@ var naoOrdenado = [5, 2, 8, 1, 7]
 }
 
 
-console.log( 'Primeira função',Ordenar()); 
+console.log( 'Primeira função',Ordenar());  */
 //Selection sort
 
-function selection_sort(A) {
+/* function selection_sort(A) {
     var len = A.length;
     for (var i = 0; i < len - 1; i = i + 1) {
         var j_min = i;
@@ -82,7 +82,7 @@ function swap(A, x, y) {
     A[y] = temp;
 }
 
-console.log('Selection sort',selection_sort([5, 2, 8, 1, 7]));
+console.log('Selection sort',selection_sort([5, 2, 8, 1, 7])); */
 //Insertion sort:
 /* function insertion_sort(A) {
     var len = A.length;
@@ -215,3 +215,33 @@ console.log(buscaBinariaPokemon(93));
     }
 } 
 console.log(ProcurarNumeroLinearPokemon(93)); */
+
+function meuNumero1(numero) {
+    console.log(`Numero ${numero}`);
+}
+
+meuNumero1(5)
+
+
+function meuNumero2(numero) {
+    for (let i = 1; i <= numero; i++) {
+        console.log(`contador ${i}`);
+        
+    }
+    console.log(`numero ${numero}`);
+}
+meuNumero2(30)
+
+function meuNumero3(numero) {
+    for (let i = 1; i < numero; i++) {
+        linha = "";
+
+        for (let i = 1; i <= numero; i++) {
+            linha = linha + '' + numero
+            
+        }
+        console.log(`${linha}`);
+    }
+    console.log(`seu numero é ${numero}`);
+}
+meuNumero3(6)
