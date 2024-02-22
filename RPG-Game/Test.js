@@ -217,24 +217,24 @@ console.log(buscaBinariaPokemon(93));
 console.log(ProcurarNumeroLinearPokemon(93)); */
 
 //O(1)
-function meuNumero1(numero) {
+/* function meuNumero1(numero) {
     console.log(`Numero ${numero}`);
 }
 
-meuNumero1(5)
+meuNumero1(5) */
 
 //O(n)
-function meuNumero2(numero) {
+/* function meuNumero2(numero) {
     for (let i = 1; i <= numero; i++) {
         console.log(`contador ${i}`);
         
     }
     console.log(`numero ${numero}`);
 }
-meuNumero2(30)
+meuNumero2(30) */
 
 //O(N^2)
-function meuNumero3(numero) {
+/* function meuNumero3(numero) {
     for (let i = 1; i < numero; i++) { //O(n)
         linha = "";
 
@@ -247,7 +247,7 @@ function meuNumero3(numero) {
     console.log(`seu numero é ${numero}`);
 }
 meuNumero3(6)
-
+ */
 
 
 
@@ -311,7 +311,7 @@ quickSort(arr, 0, arr.length - 1);
 console.log(arr);
  */
 
-function quickSort(array) {
+/* function quickSort(array) {
     if (array.length <= 1) {
         return array;
     }
@@ -339,4 +339,47 @@ const arrayDesordenado = [5, 2, 8, 1, 7];
 const arrayOrdenado = quickSort(arrayDesordenado);
 
 console.log("Array Desordenado:", arrayDesordenado);
-console.log("Array Ordenado:", arrayOrdenado);
+console.log("Array Ordenado:", arrayOrdenado); */
+
+
+const elementos = ['elemento1', 'elemento2', 'elemento3', 'elemento4'];
+
+for (let i = 0; i < elementos.length; i++) {
+    console.log(elementos[i]);
+}
+//--------------------------------------------------------
+
+
+
+/* function ordenarFrutas(frutas) {
+    frutas.sort();
+    
+    for (let i = 0; i < frutas.length; i++) {
+       
+            console.log(frutas[i]);
+
+        
+    }
+}
+
+ ordenarFrutas(['banana', 'maçã', 'morango', 'uva', 'maça verde']) */
+/* ordenarFrutas(['a', 'c', 'b', 'e', 'd' ]) */
+
+function comprarJogos(Jogos) {
+    
+    let seusJogos = [];
+    
+    for (let i = 0; i < Jogos.length; i++) {
+        
+        if (seusJogos.indexOf(Jogos[i]) === -1) { // O -1 é se o jogo atual (Jogos[i]) não estiver presente no array vazio
+            seusJogos.push(Jogos[i]);
+            console.log(Jogos[i]);
+        }
+        
+    }
+    seusJogos.sort();
+    console.log(seusJogos);
+}
+
+
+comprarJogos(['KOF','KOF','Tekken','Street fighter', 'KOF','Tekken']);
