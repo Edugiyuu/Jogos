@@ -465,19 +465,18 @@ ordenarJogosPorPreco([
    
    
   const fs = require('node:fs');
-  fs.readFile('Nao_ordenado/Numeros.json', 'utf8', (err, data) => {
+  var nomeDoJson = 'Numeros'
+  fs.readFile(`Nao_ordenado/${nomeDoJson}.json`, 'utf8', (err, data) => {
 
     const numeros = JSON.parse(data);
     
     function ordenarNumeros(numeros) {
-        const inicio = performance.now();
     
         numeros.sort((a,b)=> a-b);
     
-        const fim = performance.now();
-        console.log(`A função ordenarNumeros levou ${fim - inicio} milissegundos`);
+   
         const ListaOrdenada = JSON.stringify(numeros);
-        fs.writeFile(`Ordenado/NumerosOrdenados.json`, ListaOrdenada, function () {
+        fs.writeFile(`Ordenado/${nomeDoJson}_Ordenados.json`, ListaOrdenada, function () {
             console.log('ordenado na pasta Ordenado');
         });
     }
