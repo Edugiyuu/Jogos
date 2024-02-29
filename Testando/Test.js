@@ -466,6 +466,7 @@ ordenarJogosPorPreco([
    
   const fs = require('node:fs');
   var nomeDoJson = 'Numeros'
+  let selected = document.getElementById("demoPickA").files[0];
   fs.readFile(`Nao_ordenado/${nomeDoJson}.json`, 'utf8', (err, data) => {
 
     const numeros = JSON.parse(data);
